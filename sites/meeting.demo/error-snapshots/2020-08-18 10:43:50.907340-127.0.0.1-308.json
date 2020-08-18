@@ -1,0 +1,403 @@
+{
+ "etype": "AttributeError",
+ "evalue": "AttributeError(\"'Test' object has no attribute 'attendee'\")",
+ "exception": {
+  "args": [
+   40,
+   34,
+   39,
+   84,
+   101,
+   115,
+   116,
+   39,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   32,
+   104,
+   97,
+   115,
+   32,
+   110,
+   111,
+   32,
+   97,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   32,
+   39,
+   97,
+   116,
+   116,
+   101,
+   110,
+   100,
+   101,
+   101,
+   39,
+   34,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   65,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://meeting.demo:8000/api/method/frappe.desk.form.save.savedocs' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/saroj/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "62": "",
+    "63": "\t\telif frappe.request.path.startswith(\"/api/\"):",
+    "64": "\t\t\tresponse = frappe.api.handle()",
+    "65": "",
+    "66": "\t\telif frappe.request.path.startswith('/backups'):"
+   },
+   "lnum": 64
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/saroj/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "57": "\tif call==\"method\":",
+    "58": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "59": "\t\treturn frappe.handler.handle()",
+    "60": "",
+    "61": "\telif call==\"resource\":"
+   },
+   "lnum": 59
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'frappe.desk.form.save.savedocs'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "22": "",
+    "23": "\tif cmd!='login':",
+    "24": "\t\tdata = execute_cmd(cmd)",
+    "25": "",
+    "26": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 24
+  },
+  {
+   "call": "(cmd='frappe.desk.form.save.savedocs', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'doc': '{\"docstatus\":0,\"doctype\":\"Test\",\"name\":... 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function savedocs>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "61": "\tis_whitelisted(method)",
+    "62": "",
+    "63": "\treturn frappe.call(method, **frappe.form_dict)",
+    "64": "",
+    "65": ""
+   },
+   "lnum": 63
+  },
+  {
+   "call": "(fn=<function savedocs>, *args=(), **kwargs={'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs', 'doc': '{\"docstatus\":0,\"doctype\":\"Test\",\"name\":\"New Test...tack.com\"}],\"title\":\"test 3\",\"date\":\"2020-08-18\"}'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function savedocs>",
+    "newargs": "{'action': 'Save', 'doc': '{\"docstatus\":0,\"doctype\":\"Test\",\"name\":\"New Test...tack.com\"}],\"title\":\"test 3\",\"date\":\"2020-08-18\"}'}"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1052": "\tnewargs = get_newargs(fn, kwargs)",
+    "1053": "",
+    "1054": "\treturn fn(*args, **newargs)",
+    "1055": "",
+    "1056": "def get_newargs(fn, kwargs):"
+   },
+   "lnum": 1054
+  },
+  {
+   "call": "(doc=<test_app.test_app.doctype.test.test.Test object>, action='Save')",
+   "dump": {
+    "doc": "<test_app.test_app.doctype.test.test.Test object>",
+    "doc. save": "<bound method Document.save of <test_app.test_app.doctype.test.test.Test object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py",
+   "func": "savedocs",
+   "lines": {
+    "20": "\t\telse:",
+    "21": "\t\t\ttry:",
+    "22": "\t\t\t\tdoc.save()",
+    "23": "\t\t\texcept frappe.NameError as e:",
+    "24": "\t\t\t\tdoctype, name, original_exception = e if isinstance(e, tuple) else (doc.doctype or \"\", doc.name or \"\", None)"
+   },
+   "lnum": 22
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "kwargs": "{}",
+    "self": "<test_app.test_app.doctype.test.test.Test object>",
+    "self. _save": "<bound method Document._save of <test_app.test_app.doctype.test.test.Test object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "save",
+   "lines": {
+    "271": "\tdef save(self, *args, **kwargs):",
+    "272": "\t\t\"\"\"Wrapper for _save\"\"\"",
+    "273": "\t\treturn self._save(*args, **kwargs)",
+    "274": "",
+    "275": "\tdef _save(self, ignore_permissions=None, ignore_version=None):"
+   },
+   "lnum": 273
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, ignore_permissions=None, ignore_version=None)",
+   "dump": {
+    "self": "<test_app.test_app.doctype.test.test.Test object>",
+    "self. insert": "<bound method Document.insert of <test_app.test_app.doctype.test.test.Test object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "_save",
+   "lines": {
+    "294": "",
+    "295": "\t\tif self.get(\"__islocal\") or not self.get(\"name\"):",
+    "296": "\t\t\tself.insert()",
+    "297": "\t\t\treturn",
+    "298": ""
+   },
+   "lnum": 296
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, ignore_permissions=None, ignore_links=None, ignore_if_duplicate=False, ignore_mandatory=None)",
+   "dump": {
+    "self": "<test_app.test_app.doctype.test.test.Test object>",
+    "self. run_before_save_methods": "<bound method Document.run_before_save_methods of <test_app.test_app.doctype.test.test.Test object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "insert",
+   "lines": {
+    "228": "",
+    "229": "\t\tself.flags.in_insert = True",
+    "230": "\t\tself.run_before_save_methods()",
+    "231": "\t\tself._validate()",
+    "232": "\t\tself.set_docstatus()"
+   },
+   "lnum": 230
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>)",
+   "dump": {
+    "self": "<test_app.test_app.doctype.test.test.Test object>",
+    "self. run_method": "<bound method Document.run_method of <test_app.test_app.doctype.test.test.Test object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_before_save_methods",
+   "lines": {
+    "894": "\t\tif self._action==\"save\":",
+    "895": "\t\t\tself.run_method(\"before_validate\")",
+    "896": "\t\t\tself.run_method(\"validate\")",
+    "897": "\t\t\tself.run_method(\"before_save\")",
+    "898": "\t\telif self._action==\"submit\":"
+   },
+   "lnum": 896
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, method='validate', *args=(), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<test_app.test_app.doctype.test.test.Test object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "795": "",
+    "796": "\t\tfn.__name__ = str(method)",
+    "797": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "798": "",
+    "799": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 797
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'validate'",
+    "self": "<test_app.test_app.doctype.test.test.Test object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1069": "",
+    "1070": "\t\t\tcomposed = compose(f, *hooks)",
+    "1071": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1072": "",
+    "1073": "\t\treturn composer"
+   },
+   "lnum": 1071
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, method='validate', *args=(), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "kwargs": "{}",
+    "self": "<test_app.test_app.doctype.test.test.Test object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1052": "\t\tdef compose(fn, *hooks):",
+    "1053": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1054": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1055": "\t\t\t\tfor f in hooks:",
+    "1056": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1054
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "builtin getattr": "<built-in function getattr>",
+    "fn": "undefined",
+    "kwargs": "{}",
+    "method": "'validate'",
+    "self": "<test_app.test_app.doctype.test.test.Test object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "<lambda>",
+   "lines": {
+    "789": "",
+    "790": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):",
+    "791": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)",
+    "792": "\t\telse:",
+    "793": "\t\t\t# hack! to run hooks even if method does not exist"
+   },
+   "lnum": 791
+  },
+  {
+   "call": "(self=<test_app.test_app.doctype.test.test.Test object>)",
+   "dump": {
+    "builtin print": "<built-in function print>",
+    "self": "<test_app.test_app.doctype.test.test.Test object>",
+    "self.attendee": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py",
+   "func": "validate",
+   "lines": {
+    "13": "    for attendee in self.attendees:",
+    "14": "      print(\"---------------------------------------\",attendee)",
+    "15": "      print(\"-----------------------\",self.attendee.as_dict())",
+    "16": "      if not attendee.full_name:",
+    "17": "        attendee.full_name = get_fullName(attendee.attendees)"
+   },
+   "lnum": 15
+  }
+ ],
+ "locals": {
+  "attendee": "<test_app.test_app.doctype.test_attendees.test_attendees.TestAttendees object>",
+  "found": "[]",
+  "self": "<test_app.test_app.doctype.test.test.Test object>"
+ },
+ "pyver": "Python 3.7.6: /home/saroj/frappe-bench/env/bin/python (prefix: /home/saroj/frappe-bench/env)",
+ "timestamp": "2020-08-18 10:43:50.907672",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/app.py\", line 64, in application\n    response = frappe.api.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/api.py\", line 59, in handle\n    return frappe.handler.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 24, in handle\n    data = execute_cmd(cmd)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 63, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 1054, in call\n    return fn(*args, **newargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py\", line 22, in savedocs\n    doc.save()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 273, in save\n    return self._save(*args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 296, in _save\n    self.insert()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 230, in insert\n    self.run_before_save_methods()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 896, in run_before_save_methods\n    self.run_method(\"validate\")\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 797, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 1071, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 1054, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 791, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py\", line 15, in validate\n    print(\"-----------------------\",self.attendee.as_dict())\nAttributeError: 'Test' object has no attribute 'attendee'\n"
+}

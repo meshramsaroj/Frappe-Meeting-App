@@ -1,0 +1,679 @@
+{
+ "etype": "InternalError",
+ "evalue": "InternalError(1170, \"BLOB/TEXT column 'full_name' used in key specification without a key length\")",
+ "exception": {
+  "args": [
+   40,
+   49,
+   49,
+   55,
+   48,
+   44,
+   32,
+   34,
+   66,
+   76,
+   79,
+   66,
+   47,
+   84,
+   69,
+   88,
+   84,
+   32,
+   99,
+   111,
+   108,
+   117,
+   109,
+   110,
+   32,
+   39,
+   102,
+   117,
+   108,
+   108,
+   95,
+   110,
+   97,
+   109,
+   101,
+   39,
+   32,
+   117,
+   115,
+   101,
+   100,
+   32,
+   105,
+   110,
+   32,
+   107,
+   101,
+   121,
+   32,
+   115,
+   112,
+   101,
+   99,
+   105,
+   102,
+   105,
+   99,
+   97,
+   116,
+   105,
+   111,
+   110,
+   32,
+   119,
+   105,
+   116,
+   104,
+   111,
+   117,
+   116,
+   32,
+   97,
+   32,
+   107,
+   101,
+   121,
+   32,
+   108,
+   101,
+   110,
+   103,
+   116,
+   104,
+   34,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   73,
+   110,
+   116,
+   101,
+   114,
+   110,
+   97,
+   108,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://meeting.demo:8000/api/method/frappe.desk.form.save.savedocs' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/saroj/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "62": "",
+    "63": "\t\telif frappe.request.path.startswith(\"/api/\"):",
+    "64": "\t\t\tresponse = frappe.api.handle()",
+    "65": "",
+    "66": "\t\telif frappe.request.path.startswith('/backups'):"
+   },
+   "lnum": 64
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/saroj/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "57": "\tif call==\"method\":",
+    "58": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "59": "\t\treturn frappe.handler.handle()",
+    "60": "",
+    "61": "\telif call==\"resource\":"
+   },
+   "lnum": 59
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'frappe.desk.form.save.savedocs'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "22": "",
+    "23": "\tif cmd!='login':",
+    "24": "\t\tdata = execute_cmd(cmd)",
+    "25": "",
+    "26": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 24
+  },
+  {
+   "call": "(cmd='frappe.desk.form.save.savedocs', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'doc': '{\"name\":\"Test Attendees\",\"creation\":\"20... 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function savedocs>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "61": "\tis_whitelisted(method)",
+    "62": "",
+    "63": "\treturn frappe.call(method, **frappe.form_dict)",
+    "64": "",
+    "65": ""
+   },
+   "lnum": 63
+  },
+  {
+   "call": "(fn=<function savedocs>, *args=(), **kwargs={'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs', 'doc': '{\"name\":\"Test Attendees\",\"creation\":\"2020-08-17 ...\":[],\"__last_sync_on\":\"2020-08-17T13:00:34.580Z\"}'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function savedocs>",
+    "newargs": "{'action': 'Save', 'doc': '{\"name\":\"Test Attendees\",\"creation\":\"2020-08-17 ...\":[],\"__last_sync_on\":\"2020-08-17T13:00:34.580Z\"}'}"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1052": "\tnewargs = get_newargs(fn, kwargs)",
+    "1053": "",
+    "1054": "\treturn fn(*args, **newargs)",
+    "1055": "",
+    "1056": "def get_newargs(fn, kwargs):"
+   },
+   "lnum": 1054
+  },
+  {
+   "call": "(doc=<frappe.core.doctype.doctype.doctype.DocType object>, action='Save')",
+   "dump": {
+    "doc": "<frappe.core.doctype.doctype.doctype.DocType object>",
+    "doc. save": "<bound method Document.save of <frappe.core.doctype.doctype.doctype.DocType object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py",
+   "func": "savedocs",
+   "lines": {
+    "20": "\t\telse:",
+    "21": "\t\t\ttry:",
+    "22": "\t\t\t\tdoc.save()",
+    "23": "\t\t\texcept frappe.NameError as e:",
+    "24": "\t\t\t\tdoctype, name, original_exception = e if isinstance(e, tuple) else (doc.doctype or \"\", doc.name or \"\", None)"
+   },
+   "lnum": 22
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "kwargs": "{}",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>",
+    "self. _save": "<bound method Document._save of <frappe.core.doctype.doctype.doctype.DocType object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "save",
+   "lines": {
+    "271": "\tdef save(self, *args, **kwargs):",
+    "272": "\t\t\"\"\"Wrapper for _save\"\"\"",
+    "273": "\t\treturn self._save(*args, **kwargs)",
+    "274": "",
+    "275": "\tdef _save(self, ignore_permissions=None, ignore_version=None):"
+   },
+   "lnum": 273
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, ignore_permissions=None, ignore_version=None)",
+   "dump": {
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>",
+    "self. run_post_save_methods": "<bound method Document.run_post_save_methods of ...ppe.core.doctype.doctype.doctype.DocType object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "_save",
+   "lines": {
+    "324": "",
+    "325": "\t\tself.update_children()",
+    "326": "\t\tself.run_post_save_methods()",
+    "327": "",
+    "328": "\t\treturn self"
+   },
+   "lnum": 326
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>)",
+   "dump": {
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>",
+    "self. run_method": "<bound method Document.run_method of <frappe.core.doctype.doctype.doctype.DocType object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_post_save_methods",
+   "lines": {
+    "925": "\t\t- `update_after_submit` for **Update after Submit**\"\"\"",
+    "926": "\t\tif self._action==\"save\":",
+    "927": "\t\t\tself.run_method(\"on_update\")",
+    "928": "\t\telif self._action==\"submit\":",
+    "929": "\t\t\tself.run_method(\"on_update\")"
+   },
+   "lnum": 927
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "795": "",
+    "796": "\t\tfn.__name__ = str(method)",
+    "797": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "798": "",
+    "799": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 797
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1069": "",
+    "1070": "\t\t\tcomposed = compose(f, *hooks)",
+    "1071": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1072": "",
+    "1073": "\t\treturn composer"
+   },
+   "lnum": 1071
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "kwargs": "{}",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1052": "\t\tdef compose(fn, *hooks):",
+    "1053": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1054": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1055": "\t\t\t\tfor f in hooks:",
+    "1056": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1054
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "builtin getattr": "<built-in function getattr>",
+    "fn": "undefined",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "<lambda>",
+   "lines": {
+    "789": "",
+    "790": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):",
+    "791": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)",
+    "792": "\t\telse:",
+    "793": "\t\t\t# hack! to run hooks even if method does not exist"
+   },
+   "lnum": 791
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>)",
+   "dump": {
+    "e": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py",
+   "func": "on_update",
+   "lines": {
+    "280": "\t\texcept Exception as e:",
+    "281": "\t\t\tprint(\"\\n\\nThere was an issue while migrating the DocType: {}\\n\".format(self.name))",
+    "282": "\t\t\traise e",
+    "283": "",
+    "284": "\t\tself.change_modified_of_parent()"
+   },
+   "lnum": 282
+  },
+  {
+   "call": "(self=<frappe.core.doctype.doctype.doctype.DocType object>)",
+   "dump": {
+    "frappe. db": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "frappe.db. updatedb": "<bound method MariaDBDatabase.updatedb of <frappe.database.mariadb.database.MariaDBDatabase object>>",
+    "global Meta": "<class 'frappe.model.meta.Meta'>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "self": "<frappe.core.doctype.doctype.doctype.DocType object>",
+    "self. name": "'Test Attendees'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py",
+   "func": "on_update",
+   "lines": {
+    "277": "\t\tself.delete_duplicate_custom_fields()",
+    "278": "\t\ttry:",
+    "279": "\t\t\tfrappe.db.updatedb(self.name, Meta(self))",
+    "280": "\t\texcept Exception as e:",
+    "281": "\t\t\tprint(\"\\n\\nThere was an issue while migrating the DocType: {}\\n\".format(self.name))"
+   },
+   "lnum": 279
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.database.MariaDBDatabase object>, doctype='Test Attendees', meta=<frappe.model.meta.Meta object>)",
+   "dump": {
+    "db_table": "<frappe.database.mariadb.schema.MariaDBTable object>",
+    "db_table. sync": "<bound method DBTable.sync of <frappe.database.mariadb.schema.MariaDBTable object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/database.py",
+   "func": "updatedb",
+   "lines": {
+    "289": "",
+    "290": "\t\t\tself.commit()",
+    "291": "\t\t\tdb_table.sync()",
+    "292": "\t\t\tself.begin()",
+    "293": ""
+   },
+   "lnum": 291
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "self": "<frappe.database.mariadb.schema.MariaDBTable object>",
+    "self. alter": "<bound method MariaDBTable.alter of <frappe.database.mariadb.schema.MariaDBTable object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/database/schema.py",
+   "func": "sync",
+   "lines": {
+    "35": "\t\telse:",
+    "36": "\t\t\tfrappe.cache().hdel('table_columns', self.table_name)",
+    "37": "\t\t\tself.alter()",
+    "38": "",
+    "39": "\tdef create(self):"
+   },
+   "lnum": 37
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "e": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py",
+   "func": "alter",
+   "lines": {
+    "82": "\t\t\t\tfieldname = str(e).split(\"'\")[-2]",
+    "83": "\t\t\t\tfrappe.throw(_(\"{0} field cannot be set as unique in {1}, as there are non-unique existing values\".format(",
+    "84": "\t\t\t\t\tfieldname, self.table_name)))",
+    "85": "\t\t\telse:",
+    "86": "\t\t\t\traise e"
+   },
+   "lnum": 86
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "frappe. db": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "frappe.db. sql": "<bound method Database.sql of <frappe.database.mariadb.database.MariaDBDatabase object>>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "query": "'ALTER TABLE `tabTest Attendees` MODIFY `full_name` text'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py",
+   "func": "alter",
+   "lines": {
+    "73": "\t\t\t\t\tquery_body = \", \".join(query_parts)",
+    "74": "\t\t\t\t\tquery = \"ALTER TABLE `{}` {}\".format(self.table_name, query_body)",
+    "75": "\t\t\t\t\tfrappe.db.sql(query)",
+    "76": "",
+    "77": "\t\texcept Exception as e:"
+   },
+   "lnum": 75
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.database.MariaDBDatabase object>, query='ALTER TABLE `tabTest Attendees` MODIFY `full_name` text', values=(), as_dict=0, as_list=0, formatted=0, debug=0, ignore_ddl=0, as_utf8=0, auto_commit=0, update=None, explain=False)",
+   "dump": {
+    "query": "'ALTER TABLE `tabTest Attendees` MODIFY `full_name` text'",
+    "self": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "self. _cursor": "<pymysql.cursors.Cursor object>",
+    "self._cursor. execute": "<bound method Cursor.execute of <pymysql.cursors.Cursor object>>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/database/database.py",
+   "func": "sql",
+   "lines": {
+    "169": "\t\t\t\t\tfrappe.log(\">>>>\")",
+    "170": "",
+    "171": "\t\t\t\tself._cursor.execute(query)",
+    "172": "",
+    "173": "\t\t\t\tif frappe.flags.in_migrate:"
+   },
+   "lnum": 171
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, query='ALTER TABLE `tabTest Attendees` MODIFY `full_name` text', args=None)",
+   "dump": {
+    "query": "'ALTER TABLE `tabTest Attendees` MODIFY `full_name` text'",
+    "result": "undefined",
+    "self": "<pymysql.cursors.Cursor object>",
+    "self. _query": "<bound method Cursor._query of <pymysql.cursors.Cursor object>>"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py",
+   "func": "execute",
+   "lines": {
+    "168": "        query = self.mogrify(query, args)",
+    "169": "",
+    "170": "        result = self._query(query)",
+    "171": "        self._executed = query",
+    "172": "        return result"
+   },
+   "lnum": 170
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, q='ALTER TABLE `tabTest Attendees` MODIFY `full_name` text')",
+   "dump": {
+    "conn": "<pymysql.connections.Connection object>",
+    "conn. query": "<bound method Connection.query of <pymysql.connections.Connection object>>",
+    "q": "'ALTER TABLE `tabTest Attendees` MODIFY `full_name` text'"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py",
+   "func": "_query",
+   "lines": {
+    "326": "        self._last_executed = q",
+    "327": "        self._clear_result()",
+    "328": "        conn.query(q)",
+    "329": "        self._do_get_result()",
+    "330": "        return self.rowcount"
+   },
+   "lnum": 328
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, sql=b'ALTER TABLE `tabTest Attendees` MODIFY `full_name` text', unbuffered=False)",
+   "dump": {
+    "self": "<pymysql.connections.Connection object>",
+    "self. _affected_rows": "1",
+    "self. _read_query_result": "<bound method Connection._read_query_result of <pymysql.connections.Connection object>>",
+    "unbuffered": "False"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py",
+   "func": "query",
+   "lines": {
+    "515": "                sql = sql.encode(self.encoding, 'surrogateescape')",
+    "516": "        self._execute_command(COMMAND.COM_QUERY, sql)",
+    "517": "        self._affected_rows = self._read_query_result(unbuffered=unbuffered)",
+    "518": "        return self._affected_rows",
+    "519": ""
+   },
+   "lnum": 517
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, unbuffered=False)",
+   "dump": {
+    "result": "<pymysql.connections.MySQLResult object>",
+    "result. read": "<bound method MySQLResult.read of <pymysql.connections.MySQLResult object>>"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py",
+   "func": "_read_query_result",
+   "lines": {
+    "730": "        else:",
+    "731": "            result = MySQLResult(self)",
+    "732": "            result.read()",
+    "733": "        self._result = result",
+    "734": "        if result.server_status is not None:"
+   },
+   "lnum": 732
+  },
+  {
+   "call": "(self=<pymysql.connections.MySQLResult object>)",
+   "dump": {
+    "first_packet": "undefined",
+    "self": "<pymysql.connections.MySQLResult object>",
+    "self. connection": "None",
+    "self.connection._read_packet": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py",
+   "func": "read",
+   "lines": {
+    "1073": "    def read(self):",
+    "1074": "        try:",
+    "1075": "            first_packet = self.connection._read_packet()",
+    "1076": "",
+    "1077": "            if first_packet.is_ok_packet():"
+   },
+   "lnum": 1075
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, packet_type=<class 'pymysql.protocol.MysqlPacket'>)",
+   "dump": {
+    "packet": "<pymysql.protocol.MysqlPacket object>",
+    "packet. check_error": "<bound method MysqlPacket.check_error of <pymysql.protocol.MysqlPacket object>>"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py",
+   "func": "_read_packet",
+   "lines": {
+    "682": "",
+    "683": "        packet = packet_type(buff, self.encoding)",
+    "684": "        packet.check_error()",
+    "685": "        return packet",
+    "686": ""
+   },
+   "lnum": 684
+  },
+  {
+   "call": "(self=<pymysql.protocol.MysqlPacket object>)",
+   "dump": {
+    "err. raise_mysql_exception": "<function raise_mysql_exception>",
+    "global err": "<module 'pymysql.err' from '/home/saroj/frappe-b.../env/lib/python3.7/site-packages/pymysql/err.py'>",
+    "self": "<pymysql.protocol.MysqlPacket object>",
+    "self. _data": "b\"\\xff\\x92\\x04#42000BLOB/TEXT column 'full_name' used in key specification without a key length\""
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/protocol.py",
+   "func": "check_error",
+   "lines": {
+    "218": "            errno = self.read_uint16()",
+    "219": "            if DEBUG: print(\"errno =\", errno)",
+    "220": "            err.raise_mysql_exception(self._data)",
+    "221": "",
+    "222": "    def dump(self):"
+   },
+   "lnum": 220
+  },
+  {
+   "call": "(data=b\"\\xff\\x92\\x04#42000BLOB/TEXT column 'full_name' used in key specification without a key length\")",
+   "dump": {
+    "errno": "1170",
+    "errorclass": "<class 'pymysql.err.InternalError'>",
+    "errval": "\"BLOB/TEXT column 'full_name' used in key specification without a key length\""
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/err.py",
+   "func": "raise_mysql_exception",
+   "lines": {
+    "105": "        errval = data[9:].decode('utf-8', 'replace')",
+    "106": "    else:",
+    "107": "        errval = data[3:].decode('utf-8', 'replace')",
+    "108": "    errorclass = error_map.get(errno, InternalError)",
+    "109": "    raise errorclass(errno, errval)"
+   },
+   "lnum": 109
+  }
+ ],
+ "locals": {
+  "data": "b\"\\xff\\x92\\x04#42000BLOB/TEXT column 'full_name' used in key specification without a key length\"",
+  "errno": "1170",
+  "errorclass": "<class 'pymysql.err.InternalError'>",
+  "errval": "BLOB/TEXT column 'full_name' used in key specification without a key length",
+  "is_41": "True"
+ },
+ "pyver": "Python 3.7.6: /home/saroj/frappe-bench/env/bin/python (prefix: /home/saroj/frappe-bench/env)",
+ "timestamp": "2020-08-17 18:30:45.358999",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/app.py\", line 64, in application\n    response = frappe.api.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/api.py\", line 59, in handle\n    return frappe.handler.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 24, in handle\n    data = execute_cmd(cmd)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 63, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 1054, in call\n    return fn(*args, **newargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py\", line 22, in savedocs\n    doc.save()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 273, in save\n    return self._save(*args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 326, in _save\n    self.run_post_save_methods()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 927, in run_post_save_methods\n    self.run_method(\"on_update\")\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 797, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 1071, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 1054, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py\", line 791, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py\", line 282, in on_update\n    raise e\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py\", line 279, in on_update\n    frappe.db.updatedb(self.name, Meta(self))\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/database.py\", line 291, in updatedb\n    db_table.sync()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/database/schema.py\", line 37, in sync\n    self.alter()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py\", line 86, in alter\n    raise e\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py\", line 75, in alter\n    frappe.db.sql(query)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/database/database.py\", line 171, in sql\n    self._cursor.execute(query)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py\", line 170, in execute\n    result = self._query(query)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py\", line 328, in _query\n    conn.query(q)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py\", line 517, in query\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py\", line 732, in _read_query_result\n    result.read()\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py\", line 1075, in read\n    first_packet = self.connection._read_packet()\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py\", line 684, in _read_packet\n    packet.check_error()\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/protocol.py\", line 220, in check_error\n    err.raise_mysql_exception(self._data)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/err.py\", line 109, in raise_mysql_exception\n    raise errorclass(errno, errval)\npymysql.err.InternalError: (1170, \"BLOB/TEXT column 'full_name' used in key specification without a key length\")\n"
+}

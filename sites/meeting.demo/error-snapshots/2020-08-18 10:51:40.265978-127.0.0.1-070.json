@@ -1,0 +1,281 @@
+{
+ "etype": "AttributeError",
+ "evalue": "AttributeError(\"module 'test_app.test_app.doctype.test' has no attribute 'get_fullName'\")",
+ "exception": {
+  "args": [
+   40,
+   34,
+   109,
+   111,
+   100,
+   117,
+   108,
+   101,
+   32,
+   39,
+   116,
+   101,
+   115,
+   116,
+   95,
+   97,
+   112,
+   112,
+   46,
+   116,
+   101,
+   115,
+   116,
+   95,
+   97,
+   112,
+   112,
+   46,
+   100,
+   111,
+   99,
+   116,
+   121,
+   112,
+   101,
+   46,
+   116,
+   101,
+   115,
+   116,
+   39,
+   32,
+   104,
+   97,
+   115,
+   32,
+   110,
+   111,
+   32,
+   97,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   32,
+   39,
+   103,
+   101,
+   116,
+   95,
+   102,
+   117,
+   108,
+   108,
+   78,
+   97,
+   109,
+   101,
+   39,
+   34,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   65,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://meeting.demo:8000/api/method/test_app.test_app.doctype.test.get_fullName' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/saroj/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "62": "",
+    "63": "\t\telif frappe.request.path.startswith(\"/api/\"):",
+    "64": "\t\t\tresponse = frappe.api.handle()",
+    "65": "",
+    "66": "\t\telif frappe.request.path.startswith('/backups'):"
+   },
+   "lnum": 64
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/saroj/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "57": "\tif call==\"method\":",
+    "58": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "59": "\t\treturn frappe.handler.handle()",
+    "60": "",
+    "61": "\telif call==\"resource\":"
+   },
+   "lnum": 59
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'test_app.test_app.doctype.test.get_fullName'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "22": "",
+    "23": "\tif cmd!='login':",
+    "24": "\t\tdata = execute_cmd(cmd)",
+    "25": "",
+    "26": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 24
+  },
+  {
+   "call": "(cmd='test_app.test_app.doctype.test.get_fullName', from_async=False)",
+   "dump": {
+    "e": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "50": "\texcept Exception as e:",
+    "51": "\t\tif frappe.local.conf.developer_mode:",
+    "52": "\t\t\traise e",
+    "53": "\t\telse:",
+    "54": "\t\t\tfrappe.respond_as_web_page(title='Invalid Method', html='Method not found',"
+   },
+   "lnum": 52
+  },
+  {
+   "call": "(cmd='test_app.test_app.doctype.test.get_fullName', from_async=False)",
+   "dump": {
+    "cmd": "'test_app.test_app.doctype.test.get_fullName'",
+    "global get_attr": "<function get_attr>",
+    "method": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "47": "",
+    "48": "\ttry:",
+    "49": "\t\tmethod = get_attr(cmd)",
+    "50": "\texcept Exception as e:",
+    "51": "\t\tif frappe.local.conf.developer_mode:"
+   },
+   "lnum": 49
+  },
+  {
+   "call": "(cmd='test_app.test_app.doctype.test.get_fullName')",
+   "dump": {
+    "cmd": "'test_app.test_app.doctype.test.get_fullName'",
+    "frappe. get_attr": "<function get_attr>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "undefined"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "get_attr",
+   "lines": {
+    "205": "\t\"\"\"get method object from cmd\"\"\"",
+    "206": "\tif '.' in cmd:",
+    "207": "\t\tmethod = frappe.get_attr(cmd)",
+    "208": "\telse:",
+    "209": "\t\tmethod = globals()[cmd]"
+   },
+   "lnum": 207
+  },
+  {
+   "call": "(method_string='test_app.test_app.doctype.test.get_fullName')",
+   "dump": {
+    "builtin getattr": "<built-in function getattr>",
+    "global get_module": "<function get_module>",
+    "methodname": "'get_fullName'",
+    "modulename": "'test_app.test_app.doctype.test'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "get_attr",
+   "lines": {
+    "1043": "\tmodulename = '.'.join(method_string.split('.')[:-1])",
+    "1044": "\tmethodname = method_string.split('.')[-1]",
+    "1045": "\treturn getattr(get_module(modulename), methodname)",
+    "1046": "",
+    "1047": "def call(fn, *args, **kwargs):"
+   },
+   "lnum": 1045
+  }
+ ],
+ "locals": {
+  "app_name": "test_app",
+  "method_string": "test_app.test_app.doctype.test.get_fullName",
+  "methodname": "get_fullName",
+  "modulename": "test_app.test_app.doctype.test"
+ },
+ "pyver": "Python 3.7.6: /home/saroj/frappe-bench/env/bin/python (prefix: /home/saroj/frappe-bench/env)",
+ "timestamp": "2020-08-18 10:51:40.266825",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/app.py\", line 64, in application\n    response = frappe.api.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/api.py\", line 59, in handle\n    return frappe.handler.handle()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 24, in handle\n    data = execute_cmd(cmd)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 52, in execute_cmd\n    raise e\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 49, in execute_cmd\n    method = get_attr(cmd)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/handler.py\", line 207, in get_attr\n    method = frappe.get_attr(cmd)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 1045, in get_attr\n    return getattr(get_module(modulename), methodname)\nAttributeError: module 'test_app.test_app.doctype.test' has no attribute 'get_fullName'\n"
+}
