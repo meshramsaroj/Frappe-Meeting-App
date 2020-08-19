@@ -11,11 +11,14 @@
   "column_break_3",
   "from_time",
   "to_time",
+  "status",
+  "invitation_section",
+  "invitation_message",
+  "send_email",
   "minutes_section",
   "minutes",
   "attendees_section",
-  "attendees",
-  "invitation_section"
+  "attendees"
  ],
  "fields": [
   {
@@ -79,9 +82,25 @@
    "fieldtype": "Table",
    "label": "Minutes",
    "options": "Test Minute"
+  },
+  {
+   "fieldname": "invitation_message",
+   "fieldtype": "Text Editor",
+   "label": "Invitation Message"
+  },
+  {
+   "fieldname": "send_email",
+   "fieldtype": "Button",
+   "label": "Send Email"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPlanned\nInvitation Sent\nIn Progress\nCanceled"
   }
  ],
- "modified": "2020-08-18 10:50:47.655931",
+ "modified": "2020-08-18 13:55:24.018027",
  "modified_by": "Administrator",
  "module": "Test App",
  "name": "Test",

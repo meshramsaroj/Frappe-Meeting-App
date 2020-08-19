@@ -1,0 +1,787 @@
+2020-08-16 18:54:09,720 DEBUG cd frappe-bench && /home/saroj/.local/bin/virtualenv -q env -p python3
+2020-08-16 18:54:39,842 LOG Getting app frappe
+2020-08-16 18:54:39,843 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git --branch version-12 --depth 1 --origin upstream
+2020-08-16 18:57:23,968 LOG installing frappe
+2020-08-16 18:57:23,969 DEBUG frappe-bench/env/bin/pip install -q -U -e frappe-bench/apps/frappe 
+2020-08-16 18:58:50,601 DEBUG cd frappe-bench/apps/frappe && yarn install
+2020-08-16 19:02:06,122 DEBUG cd frappe-bench/apps/frappe && yarn install
+2020-08-16 19:02:07,200 DEBUG cd frappe-bench && bench build
+2020-08-16 19:02:11,532 INFO /home/saroj/.local/bin/bench build
+2020-08-16 19:02:11,533 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:03:30,769 LOG setting up backups
+2020-08-16 19:03:31,185 INFO Bench frappe-bench initialized
+2020-08-16 19:13:46,915 INFO /home/saroj/.local/bin/bench start
+2020-08-16 19:13:46,916 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:48,764 INFO /home/saroj/.local/bin/bench serve --port 8001
+2020-08-16 19:13:48,765 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:48,860 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 19:13:48,861 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:48,870 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 19:13:48,871 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:48,889 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 19:13:48,890 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:48,922 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 19:13:48,922 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:13:49,018 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 19:13:49,018 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:19:08,576 INFO /home/saroj/.local/bin/bench new-site meeting.dev
+2020-08-16 19:19:08,599 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:33:35,121 INFO /home/saroj/.local/bin/bench new-app meeting
+2020-08-16 19:33:35,329 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:33:35,693 LOG creating new app meeting
+2020-08-16 19:35:20,134 LOG installing meeting
+2020-08-16 19:35:20,134 DEBUG ./env/bin/pip install -q -U -e ./apps/meeting 
+2020-08-16 19:35:28,209 DEBUG bench build --app meeting
+2020-08-16 19:35:28,673 INFO /home/saroj/.local/bin/bench build --app meeting
+2020-08-16 19:35:28,673 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:40:18,985 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app meeting
+2020-08-16 19:40:19,051 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:42:10,704 INFO /home/saroj/.local/bin/bench --site meeting.dev set-config developer_mode 1
+2020-08-16 19:42:10,704 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:08,045 INFO /home/saroj/.local/bin/bench start
+2020-08-16 19:44:08,045 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,089 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 19:44:10,102 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,167 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 19:44:10,169 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,189 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 19:44:10,191 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,322 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 19:44:10,323 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,323 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 19:44:10,324 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:44:10,454 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 19:44:10,456 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:05,788 INFO /home/saroj/.local/bin/bench start
+2020-08-16 19:48:05,810 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:07,676 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 19:48:07,677 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:07,849 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 19:48:07,851 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:07,912 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 19:48:07,913 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:08,011 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 19:48:08,011 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:08,048 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 19:48:08,049 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:48:08,058 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 19:48:08,059 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:56:30,723 INFO /home/saroj/.local/bin/bench get-app --branch version-12 erpnext
+2020-08-16 19:56:30,746 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 19:56:32,317 LOG Getting app erpnext
+2020-08-16 19:56:32,319 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext --branch version-12 --depth 1 --origin upstream
+2020-08-16 19:59:07,907 LOG installing erpnext
+2020-08-16 19:59:07,907 DEBUG ./env/bin/pip install -q -U -e ./apps/erpnext 
+2020-08-16 20:00:32,894 DEBUG cd ./apps/erpnext && yarn install
+2020-08-16 20:00:35,275 DEBUG bench build --app erpnext
+2020-08-16 20:00:35,738 INFO /home/saroj/.local/bin/bench build --app erpnext
+2020-08-16 20:00:35,738 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:35:54,807 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app erpnext
+2020-08-16 20:35:54,807 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:08,911 INFO /home/saroj/.local/bin/bench start
+2020-08-16 20:37:08,911 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,038 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 20:37:11,039 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,126 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 20:37:11,128 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,158 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 20:37:11,159 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,165 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 20:37:11,166 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,416 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 20:37:11,418 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:37:11,420 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 20:37:11,428 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:18,611 INFO /home/saroj/.local/bin/bench start
+2020-08-16 20:45:18,635 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,688 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 20:45:20,690 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,708 INFO /home/saroj/.local/bin/bench serve --port 9090
+2020-08-16 20:45:20,709 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,771 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 20:45:20,772 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,825 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 20:45:20,826 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,845 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 20:45:20,846 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:45:20,898 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 20:45:20,900 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:36,553 INFO /home/saroj/.local/bin/bench start
+2020-08-16 20:59:36,609 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,391 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 20:59:38,391 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,435 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 20:59:38,435 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,545 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 20:59:38,545 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,554 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 20:59:38,554 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,557 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 20:59:38,558 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 20:59:38,597 INFO /home/saroj/.local/bin/bench serve --port 9090
+2020-08-16 20:59:38,597 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:04,372 INFO /home/saroj/.local/bin/bench start
+2020-08-16 21:08:04,440 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:06,929 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 21:08:06,930 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:07,008 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 21:08:07,008 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:07,023 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 21:08:07,023 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:07,109 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 21:08:07,110 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:07,174 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 21:08:07,174 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:08:07,201 INFO /home/saroj/.local/bin/bench serve --port 9090
+2020-08-16 21:08:07,202 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:24,979 INFO /home/saroj/.local/bin/bench start
+2020-08-16 21:12:25,004 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:26,932 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 21:12:26,933 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:26,990 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 21:12:26,991 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:27,010 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 21:12:27,010 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 21:12:27,046 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 21:12:27,052 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 21:12:27,057 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:27,057 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:27,058 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 21:12:27,061 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:23,269 INFO /home/saroj/.local/bin/bench start
+2020-08-16 22:23:23,293 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,118 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 22:23:25,118 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,200 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 22:23:25,201 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,220 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 22:23:25,221 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,236 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 22:23:25,236 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,298 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 22:23:25,299 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:23:25,319 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 22:23:25,319 WARNING bench is installed in editable mode!
+
+This is not the recommended mode of installation for production. Instead, install the package from PyPI with: `pip install frappe-bench`
+
+2020-08-16 22:38:57,030 INFO /home/saroj/.local/bin/bench serve --port 8080
+2020-08-16 22:40:17,657 INFO /home/saroj/.local/bin/bench serve --port 8002
+2020-08-16 22:41:07,178 INFO /home/saroj/.local/bin/bench use meeting.dev
+2020-08-16 22:41:13,853 INFO /home/saroj/.local/bin/bench start
+2020-08-16 22:41:16,318 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 22:41:16,382 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 22:41:16,495 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 22:41:16,578 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 22:41:16,694 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 22:41:16,746 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 22:45:26,231 INFO /home/saroj/.local/bin/bench reinstall
+2020-08-16 22:48:29,166 INFO /home/saroj/.local/bin/bench reinstall
+2020-08-16 22:59:18,596 INFO /home/saroj/.local/bin/bench start
+2020-08-16 22:59:20,888 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 22:59:20,936 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 22:59:20,951 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 22:59:20,957 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 22:59:21,073 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 22:59:21,142 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-16 23:08:42,496 INFO /home/saroj/.local/bin/bench config dns_multitenant on
+2020-08-16 23:17:11,960 INFO /home/saroj/.local/bin/bench start
+2020-08-16 23:17:13,805 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-16 23:17:13,864 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-16 23:17:13,894 INFO /home/saroj/.local/bin/bench schedule
+2020-08-16 23:17:13,985 INFO /home/saroj/.local/bin/bench watch
+2020-08-16 23:17:14,003 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-16 23:17:14,031 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 00:00:49,891 INFO /home/saroj/.local/bin/bench --verbose --site all backup
+2020-08-17 10:27:44,040 INFO /home/saroj/.local/bin/bench start
+2020-08-17 10:27:45,991 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 10:27:46,101 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 10:27:46,102 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 10:27:46,151 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 10:27:46,195 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 10:27:46,198 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 14:02:30,525 INFO /home/saroj/.local/bin/bench start
+2020-08-17 14:02:32,365 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 14:02:32,492 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 14:02:32,497 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 14:02:32,575 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 14:02:32,606 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 14:02:32,654 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 14:19:02,673 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app meeting
+2020-08-17 14:25:03,898 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app meeting
+2020-08-17 14:39:13,811 INFO /home/saroj/.local/bin/bench start
+2020-08-17 14:39:15,706 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 14:39:15,734 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 14:39:15,864 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 14:39:15,919 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 14:39:15,940 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 14:39:15,959 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 14:44:57,964 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app meeting
+2020-08-17 14:57:03,839 INFO /home/saroj/.local/bin/bench start
+2020-08-17 14:57:06,162 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 14:57:06,212 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 14:57:06,346 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 14:57:06,408 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 14:57:06,409 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 14:57:06,474 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 15:15:25,639 INFO /home/saroj/.local/bin/bench --site meeting.dev install-app meeting
+2020-08-17 15:16:58,558 INFO /home/saroj/.local/bin/bench uninstall-app meeting
+2020-08-17 15:18:28,395 INFO /home/saroj/.local/bin/bench install-app meeting
+2020-08-17 15:19:22,595 INFO /home/saroj/.local/bin/bench install-app meeting
+2020-08-17 15:20:51,279 INFO /home/saroj/.local/bin/bench start
+2020-08-17 15:20:53,143 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 15:20:53,254 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 15:20:53,312 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 15:20:53,344 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 15:20:53,412 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 15:20:53,446 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 15:27:33,338 INFO /home/saroj/.local/bin/bench migrate
+2020-08-17 15:30:17,773 INFO /home/saroj/.local/bin/bench start
+2020-08-17 15:30:19,575 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 15:30:19,724 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 15:30:19,775 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 15:30:19,952 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 15:30:20,012 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 15:30:20,120 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 15:32:13,967 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-17 16:02:05,163 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:02:05,652 INFO /home/saroj/.local/bin/bench --site meeting.dev list-apps
+2020-08-17 16:02:25,850 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:04:24,968 INFO /home/saroj/.local/bin/bench --site meeting.dev --force reinstall
+2020-08-17 16:24:20,289 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:24:20,712 INFO /home/saroj/.local/bin/bench --site meeting.dev list-apps
+2020-08-17 16:24:22,256 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:24:38,745 INFO /home/saroj/.local/bin/bench uninstall-app meeting
+2020-08-17 16:25:05,951 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:25:06,372 INFO /home/saroj/.local/bin/bench --site meeting.dev list-apps
+2020-08-17 16:25:07,915 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:25:41,240 INFO /home/saroj/.local/bin/bench --site meeting.dev uninstall-app meeting
+2020-08-17 16:26:32,873 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:26:33,294 INFO /home/saroj/.local/bin/bench --site meeting.dev list-apps
+2020-08-17 16:26:34,862 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:28:23,672 INFO /home/saroj/.local/bin/bench --site meeting.dev uninstall-app meeting
+2020-08-17 16:28:49,876 INFO /home/saroj/.local/bin/bench --site other_site uninstall-app meeting
+2020-08-17 16:29:17,953 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:29:18,367 INFO /home/saroj/.local/bin/bench --site meeting.dev list-apps
+2020-08-17 16:29:19,924 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:30:20,631 INFO /home/saroj/.local/bin/bench --site meeting.dev uninstall-app meeting
+2020-08-17 16:30:30,098 INFO /home/saroj/.local/bin/bench remove-app meeting
+2020-08-17 16:30:30,100 WARNING /home/saroj/.local/bin/bench remove-app meeting executed with exit code 1
+2020-08-17 16:32:55,787 INFO /home/saroj/.local/bin/bench start
+2020-08-17 16:32:57,653 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 16:32:57,670 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 16:32:57,810 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 16:32:57,844 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 16:32:57,900 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 16:32:57,990 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 16:36:21,612 INFO /home/saroj/.local/bin/bench drop-site
+2020-08-17 16:36:45,732 INFO /home/saroj/.local/bin/bench start
+2020-08-17 16:36:48,277 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 16:36:48,345 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 16:36:48,351 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 16:36:48,410 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 16:36:48,451 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 16:36:48,481 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 16:37:00,141 INFO /home/saroj/.local/bin/bench drop-site
+2020-08-17 16:38:30,528 INFO /home/saroj/.local/bin/bench drop-site --help
+2020-08-17 16:41:32,040 INFO /home/saroj/.local/bin/bench start
+2020-08-17 16:42:30,644 INFO /home/saroj/.local/bin/bench remove-site meeting.dev
+2020-08-17 16:42:30,676 WARNING /home/saroj/.local/bin/bench remove-site meeting.dev executed with exit code 2
+2020-08-17 16:42:37,391 INFO /home/saroj/.local/bin/bench --help
+2020-08-17 16:47:48,581 INFO /home/saroj/.local/bin/bench reinstall
+2020-08-17 16:49:40,151 INFO /home/saroj/.local/bin/bench new-app meeting_demo
+2020-08-17 16:49:40,177 LOG creating new app meeting_demo
+2020-08-17 16:50:20,692 LOG installing meeting_demo
+2020-08-17 16:50:20,693 DEBUG ./env/bin/pip install -q -U -e ./apps/meeting_demo 
+2020-08-17 16:50:29,850 DEBUG bench build --app meeting_demo
+2020-08-17 16:50:30,271 INFO /home/saroj/.local/bin/bench build --app meeting_demo
+2020-08-17 16:51:23,447 INFO /home/saroj/.local/bin/bench new-site meeting.demo
+2020-08-17 17:00:13,640 INFO /home/saroj/.local/bin/bench start
+2020-08-17 17:00:15,546 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 17:00:15,643 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 17:00:15,733 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 17:00:15,795 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 17:00:15,812 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 17:00:15,880 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 17:12:06,035 INFO /home/saroj/.local/bin/bench --site meeting.demo install-app meeting_demo
+2020-08-17 17:20:06,670 INFO /home/saroj/.local/bin/bench --site meeting.demo install-app meeting_demo
+2020-08-17 17:21:42,897 INFO /home/saroj/.local/bin/bench start
+2020-08-17 17:21:45,394 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 17:21:45,407 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 17:21:45,489 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 17:21:45,518 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 17:21:45,561 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 17:21:45,576 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 17:27:26,993 INFO /home/saroj/.local/bin/bench new-site meeting-demo
+2020-08-17 17:28:41,740 INFO /home/saroj/.local/bin/bench --site meeting.demo install-app meeting_demo
+2020-08-17 17:29:43,129 INFO /home/saroj/.local/bin/bench new-app test-app
+2020-08-17 17:29:43,157 LOG creating new app test_app
+2020-08-17 17:30:06,452 LOG installing test_app
+2020-08-17 17:30:06,453 DEBUG ./env/bin/pip install -q -U -e ./apps/test_app 
+2020-08-17 17:30:21,876 DEBUG bench build --app test_app
+2020-08-17 17:30:22,629 INFO /home/saroj/.local/bin/bench build --app test_app
+2020-08-17 17:32:20,194 INFO /home/saroj/.local/bin/bench use meeting.demo
+2020-08-17 17:32:49,443 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-17 17:33:40,686 INFO /home/saroj/.local/bin/bench install-app test_app
+2020-08-17 17:34:15,125 INFO /home/saroj/.local/bin/bench --site meeting.demo install-app test_app
+2020-08-17 17:34:24,370 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-17 17:35:06,149 INFO /home/saroj/.local/bin/bench start
+2020-08-17 17:35:09,471 INFO /home/saroj/.local/bin/bench watch
+2020-08-17 17:35:09,600 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-17 17:35:09,657 INFO /home/saroj/.local/bin/bench schedule
+2020-08-17 17:35:09,673 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-17 17:35:09,714 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-17 17:35:09,740 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-17 18:00:24,743 INFO /home/saroj/.local/bin/bench --verbose --site all backup
+2020-08-17 18:44:13,970 INFO /home/saroj/.local/bin/bench --site meeting.demo mariadb
+2020-08-17 18:53:08,801 INFO /home/saroj/.local/bin/bench new-site test-site --db-name test
+2020-08-18 10:13:52,952 INFO /home/saroj/.local/bin/bench start
+2020-08-18 10:13:56,179 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-18 10:13:56,266 INFO /home/saroj/.local/bin/bench watch
+2020-08-18 10:13:56,279 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-18 10:13:56,288 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-18 10:13:56,313 INFO /home/saroj/.local/bin/bench schedule
+2020-08-18 10:13:56,323 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-18 13:27:58,376 INFO /home/saroj/.local/bin/bench start
+2020-08-18 13:28:00,446 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-18 13:28:00,481 INFO /home/saroj/.local/bin/bench schedule
+2020-08-18 13:28:00,491 INFO /home/saroj/.local/bin/bench watch
+2020-08-18 13:28:00,524 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-18 13:28:00,573 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-18 13:28:00,582 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-18 15:42:11,019 INFO /home/saroj/.local/bin/bench --site meeting.demo mariadb
+2020-08-18 16:40:46,592 INFO /home/saroj/.local/bin/bench start
+2020-08-18 16:40:48,274 INFO /home/saroj/.local/bin/bench watch
+2020-08-18 16:40:48,563 INFO /home/saroj/.local/bin/bench schedule
+2020-08-18 16:40:48,642 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-18 16:40:48,705 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-18 16:40:48,710 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-18 16:40:48,745 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-18 17:18:58,775 INFO /home/saroj/.local/bin/bench start
+2020-08-18 17:19:00,813 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-18 17:19:00,883 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-18 17:19:00,982 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-18 17:19:00,987 INFO /home/saroj/.local/bin/bench watch
+2020-08-18 17:19:01,004 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-18 17:19:01,053 INFO /home/saroj/.local/bin/bench schedule
+2020-08-18 18:00:12,027 INFO /home/saroj/.local/bin/bench --verbose --site all backup
+2020-08-18 18:02:48,646 INFO /home/saroj/.local/bin/bench start
+2020-08-18 18:02:50,340 INFO /home/saroj/.local/bin/bench schedule
+2020-08-18 18:02:50,577 INFO /home/saroj/.local/bin/bench watch
+2020-08-18 18:02:50,590 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-18 18:02:50,621 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-18 18:02:50,711 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-18 18:02:50,723 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 12:22:28,592 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 12:26:15,906 INFO /home/saroj/.local/bin/bench new-site bloomstack
+2020-08-19 12:31:32,416 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 12:33:06,510 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack
+2020-08-19 12:36:54,031 INFO /home/saroj/.local/bin/bench new-app bloomstack_core
+2020-08-19 12:36:54,059 LOG creating new app bloomstack_core
+2020-08-19 12:37:35,513 LOG installing bloomstack_core
+2020-08-19 12:37:35,556 DEBUG ./env/bin/pip install -q -U -e ./apps/bloomstack_core 
+2020-08-19 12:37:48,096 DEBUG bench build --app bloomstack_core
+2020-08-19 12:37:48,778 INFO /home/saroj/.local/bin/bench build --app bloomstack_core
+2020-08-19 12:38:21,604 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 12:54:37,077 INFO /home/saroj/.local/bin/bench get-app git@github.com:DigiThinkIT/erpnext.git --branch staging
+2020-08-19 12:55:00,775 LOG Getting app erpnext
+2020-08-19 12:55:00,776 DEBUG cd ./apps && git clone git@github.com:DigiThinkIT/erpnext.git --branch staging --depth 1 --origin upstream
+2020-08-19 12:55:55,631 LOG installing erpnext
+2020-08-19 12:55:55,631 DEBUG ./env/bin/pip install -q -U -e ./apps/erpnext 
+2020-08-19 12:57:03,301 DEBUG cd ./apps/erpnext && yarn install
+2020-08-19 12:57:06,175 DEBUG bench build --app erpnext
+2020-08-19 12:57:07,371 INFO /home/saroj/.local/bin/bench build --app erpnext
+2020-08-19 12:58:02,398 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 12:59:16,266 INFO /home/saroj/.local/bin/bench get-app git@github.com:DigiThinkIT/bloomstack_core.git
+2020-08-19 12:59:23,607 LOG Getting app bloomstack_core
+2020-08-19 12:59:23,608 DEBUG cd ./apps && git clone git@github.com:DigiThinkIT/bloomstack_core.git  --depth 1 --origin upstream
+2020-08-19 12:59:28,706 LOG installing bloomstack_core
+2020-08-19 12:59:28,706 DEBUG ./env/bin/pip install -q -U -e ./apps/bloomstack_core 
+2020-08-19 12:59:36,951 DEBUG cd ./apps/bloomstack_core && yarn install
+2020-08-19 12:59:39,100 DEBUG bench build --app bloomstack_core
+2020-08-19 12:59:39,523 INFO /home/saroj/.local/bin/bench build --app bloomstack_core
+2020-08-19 12:59:50,767 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 13:00:28,370 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 13:01:10,003 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 13:05:03,327 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 13:05:37,475 INFO /home/saroj/.local/bin/bench --site bloomstack
+2020-08-19 13:05:48,821 INFO /home/saroj/.local/bin/bench --site bloomstack reinstall
+2020-08-19 13:14:32,730 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 13:15:11,876 INFO /home/saroj/.local/bin/bench new-site bloomstack-site
+2020-08-19 13:22:28,631 INFO /home/saroj/.local/bin/bench use bloomstack
+2020-08-19 13:22:36,215 INFO /home/saroj/.local/bin/bench install-app erpnext bloomstack_core
+2020-08-19 13:58:45,080 INFO /home/saroj/.local/bin/bench start
+2020-08-19 13:58:48,003 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 13:58:48,062 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 13:58:48,084 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 13:58:48,117 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 13:58:48,162 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 13:58:48,214 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 14:31:03,341 INFO /home/saroj/.local/bin/bench --force restore /home/saroj/bloomstack-project/20200617_020319-demo_bloomstack_garden-database.sql.gz
+2020-08-19 14:51:44,913 INFO /home/saroj/.local/bin/bench --force restore /home/saroj/bloomstack-project/20200617_020319-demo_bloomstack_garden-database.sql.gz
+2020-08-19 14:57:00,287 INFO /home/saroj/.local/bin/bench --force restore /home/saroj/bloomstack-project/20200617_020319-demo_bloomstack_garden-database.sql.gz
+2020-08-19 15:52:37,374 INFO /home/saroj/.local/bin/bench start
+2020-08-19 15:52:39,231 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 15:52:39,354 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 15:52:39,363 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 15:52:39,423 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 15:52:39,442 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 15:52:39,471 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 16:06:56,136 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-19 16:07:03,272 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-19 16:14:51,560 INFO /home/saroj/.local/bin/bench get-app git@github.com:DigiThinkIT/bloomstack_demo.git
+2020-08-19 16:14:51,612 LOG Getting app bloomstack_demo
+2020-08-19 16:14:51,613 DEBUG cd ./apps && git clone git@github.com:DigiThinkIT/bloomstack_demo.git  --depth 1 --origin upstream
+2020-08-19 16:15:01,569 LOG installing bloomstack_demo
+2020-08-19 16:15:01,569 DEBUG ./env/bin/pip install -q -U -e ./apps/bloomstack_demo 
+2020-08-19 16:15:20,412 DEBUG bench build --app bloomstack_demo
+2020-08-19 16:15:21,194 INFO /home/saroj/.local/bin/bench build --app bloomstack_demo
+2020-08-19 16:17:02,386 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 16:24:09,020 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-19 16:25:45,155 INFO /home/saroj/.local/bin/bench start
+2020-08-19 16:25:46,951 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 16:25:47,135 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 16:25:47,239 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 16:25:47,253 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 16:25:47,325 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 16:25:47,371 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 16:34:11,977 INFO /home/saroj/.local/bin/bench remove-from-installed-apps sentry
+2020-08-19 16:35:03,115 INFO /home/saroj/.local/bin/bench list-apps
+2020-08-19 16:36:29,536 INFO /home/saroj/.local/bin/bench start
+2020-08-19 16:36:31,561 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 16:36:31,585 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 16:36:31,625 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 16:36:31,684 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 16:36:31,821 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 16:36:31,867 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 16:52:10,110 INFO /home/saroj/.local/bin/bench set-admin-password saroj@123
+2020-08-19 16:57:57,993 INFO /home/saroj/.local/bin/bench update
+2020-08-19 17:01:17,814 LOG pulling frappe
+2020-08-19 17:01:17,834 DEBUG cd /home/saroj/frappe-bench/apps/frappe && git pull  upstream version-12
+2020-08-19 17:01:20,210 DEBUG cd /home/saroj/frappe-bench/apps/frappe && find . -name "*.pyc" -delete
+2020-08-19 17:01:20,611 LOG pulling erpnext
+2020-08-19 17:01:20,617 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && git pull  upstream staging
+2020-08-19 17:01:25,350 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && find . -name "*.pyc" -delete
+2020-08-19 17:01:26,999 LOG pulling bloomstack_core
+2020-08-19 17:01:27,005 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && git pull  upstream staging
+2020-08-19 17:01:30,603 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && find . -name "*.pyc" -delete
+2020-08-19 17:01:30,791 LOG pulling bloomstack_demo
+2020-08-19 17:01:30,810 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && git pull  upstream master
+2020-08-19 17:01:34,534 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && find . -name "*.pyc" -delete
+2020-08-19 17:01:34,656 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U pip
+2020-08-19 17:01:43,409 LOG installing frappe
+2020-08-19 17:01:43,409 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/frappe 
+2020-08-19 17:02:06,545 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 17:02:09,187 LOG installing erpnext
+2020-08-19 17:02:09,187 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/erpnext 
+2020-08-19 17:02:12,676 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 17:02:13,057 LOG installing meeting_demo
+2020-08-19 17:02:13,057 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/meeting_demo 
+2020-08-19 17:02:15,738 LOG installing test_app
+2020-08-19 17:02:15,738 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/test_app 
+2020-08-19 17:02:18,385 LOG installing bloomstack_core
+2020-08-19 17:02:18,385 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_core 
+2020-08-19 17:02:21,723 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 17:02:22,130 LOG installing bloomstack_demo
+2020-08-19 17:02:22,131 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_demo 
+2020-08-19 17:02:25,013 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 17:02:25,349 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 17:02:26,392 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 17:03:01,490 WARNING /home/saroj/.local/bin/bench update executed with exit code 1
+2020-08-19 17:03:02,521 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 17:06:24,294 INFO /home/saroj/.local/bin/bench start
+2020-08-19 17:06:27,849 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 17:06:27,931 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 17:06:27,998 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 17:06:28,134 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 17:06:28,140 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 17:06:28,198 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 17:06:39,657 INFO /home/saroj/.local/bin/bench update
+2020-08-19 17:07:06,631 LOG pulling frappe
+2020-08-19 17:07:06,658 DEBUG cd /home/saroj/frappe-bench/apps/frappe && git pull  upstream version-12
+2020-08-19 17:07:10,116 DEBUG cd /home/saroj/frappe-bench/apps/frappe && find . -name "*.pyc" -delete
+2020-08-19 17:07:10,344 LOG pulling erpnext
+2020-08-19 17:07:10,350 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && git pull  upstream staging
+2020-08-19 17:07:14,039 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && find . -name "*.pyc" -delete
+2020-08-19 17:07:14,120 LOG pulling bloomstack_core
+2020-08-19 17:07:14,127 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && git pull  upstream staging
+2020-08-19 17:07:17,422 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && find . -name "*.pyc" -delete
+2020-08-19 17:07:17,551 LOG pulling bloomstack_demo
+2020-08-19 17:07:17,559 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && git pull  upstream master
+2020-08-19 17:07:21,193 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && find . -name "*.pyc" -delete
+2020-08-19 17:07:21,198 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U pip
+2020-08-19 17:07:33,976 LOG installing frappe
+2020-08-19 17:07:33,976 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/frappe 
+2020-08-19 17:11:09,359 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 17:11:17,791 LOG installing erpnext
+2020-08-19 17:11:17,791 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/erpnext 
+2020-08-19 17:13:51,239 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 17:14:08,233 LOG installing meeting_demo
+2020-08-19 17:14:08,234 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/meeting_demo 
+2020-08-19 17:15:10,468 LOG installing test_app
+2020-08-19 17:15:10,469 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/test_app 
+2020-08-19 17:15:13,391 LOG installing bloomstack_core
+2020-08-19 17:15:13,391 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_core 
+2020-08-19 17:15:18,109 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 17:15:19,142 LOG installing bloomstack_demo
+2020-08-19 17:15:19,142 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_demo 
+2020-08-19 17:15:25,599 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 17:15:25,940 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 17:15:27,616 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 17:22:20,346 WARNING /home/saroj/.local/bin/bench update executed with exit code 1
+2020-08-19 17:22:21,906 INFO A newer version of bench is available: 5.1.0 → 5.2.0
+2020-08-19 18:00:07,966 INFO /home/saroj/.local/bin/bench --verbose --site all backup
+2020-08-19 18:13:43,694 INFO /home/saroj/.local/bin/bench start
+2020-08-19 18:13:46,010 INFO /home/saroj/.local/bin/bench serve --port 8000
+2020-08-19 18:13:46,125 INFO /home/saroj/.local/bin/bench schedule
+2020-08-19 18:13:46,166 INFO /home/saroj/.local/bin/bench worker --queue default
+2020-08-19 18:13:46,179 INFO /home/saroj/.local/bin/bench worker --queue short
+2020-08-19 18:13:46,377 INFO /home/saroj/.local/bin/bench watch
+2020-08-19 18:13:46,419 INFO /home/saroj/.local/bin/bench worker --queue long
+2020-08-19 18:40:25,532 INFO /home/saroj/.local/bin/bench update
+2020-08-19 18:41:12,187 LOG pulling frappe
+2020-08-19 18:41:12,194 DEBUG cd /home/saroj/frappe-bench/apps/frappe && git pull  upstream version-12
+2020-08-19 18:41:15,113 DEBUG cd /home/saroj/frappe-bench/apps/frappe && find . -name "*.pyc" -delete
+2020-08-19 18:41:16,131 LOG pulling erpnext
+2020-08-19 18:41:16,139 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && git pull  upstream staging
+2020-08-19 18:41:20,512 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && find . -name "*.pyc" -delete
+2020-08-19 18:41:23,802 LOG pulling bloomstack_core
+2020-08-19 18:41:23,821 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && git pull  upstream staging
+2020-08-19 18:41:27,308 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && find . -name "*.pyc" -delete
+2020-08-19 18:41:27,320 LOG pulling bloomstack_demo
+2020-08-19 18:41:27,325 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && git pull  upstream master
+2020-08-19 18:41:30,641 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_demo && find . -name "*.pyc" -delete
+2020-08-19 18:41:30,660 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U pip
+2020-08-19 18:41:38,170 LOG installing frappe
+2020-08-19 18:41:38,170 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/frappe 
+2020-08-19 18:41:43,510 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 18:41:46,674 LOG installing erpnext
+2020-08-19 18:41:46,674 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/erpnext 
+2020-08-19 18:41:50,731 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 18:41:51,250 LOG installing meeting_demo
+2020-08-19 18:41:51,251 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/meeting_demo 
+2020-08-19 18:41:54,068 LOG installing test_app
+2020-08-19 18:41:54,069 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/test_app 
+2020-08-19 18:41:56,796 LOG installing bloomstack_core
+2020-08-19 18:41:56,796 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_core 
+2020-08-19 18:42:00,018 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 18:42:00,431 LOG installing bloomstack_demo
+2020-08-19 18:42:00,431 DEBUG /home/saroj/frappe-bench/env/bin/pip install -q -U -e /home/saroj/frappe-bench/apps/bloomstack_demo 
+2020-08-19 18:42:03,058 DEBUG cd /home/saroj/frappe-bench/apps/erpnext && yarn install
+2020-08-19 18:42:03,393 DEBUG cd /home/saroj/frappe-bench/apps/frappe && yarn install
+2020-08-19 18:42:04,268 DEBUG cd /home/saroj/frappe-bench/apps/bloomstack_core && yarn install
+2020-08-19 18:42:15,698 WARNING /home/saroj/.local/bin/bench update executed with exit code 1
+2020-08-19 18:42:16,647 INFO A newer version of bench is available: 5.1.0 → 5.2.0

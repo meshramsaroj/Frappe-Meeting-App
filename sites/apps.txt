@@ -1,0 +1,6 @@
+frappe
+erpnext
+meeting_demo
+test_app
+bloomstack_core
+bloomstack_demo

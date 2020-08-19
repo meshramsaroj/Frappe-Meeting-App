@@ -1,0 +1,1074 @@
+[ERROR] 2020-08-17 12:15:15,442 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"9f3e39e141\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-16 23:58:56.139738\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Standup\",\"status\":\"Invited\",\"date\":\"2020-08-16\",\"from_time\":\"22:30:40\",\"to_time\":\"23:00:40\",\"doctype\":\"Meeting\",\"agenda\":[{\"name\":\"64f782c2f4\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-16 23:58:56.139738\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"docstatus\":0,\"description\":\"Discussed abut issue\",\"doctype\":\"Meeting Agenda\"}],\"minutes\":[{\"name\":\"e10e6a119b\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-16 23:58:56.139738\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"docstatus\":0,\"discussion\":\"Discussed error\",\"assigned_to\":\"saroj@bloomstack.com\",\"completed_by\":\"2020-08-15\",\"status\":\"Open\",\"doctype\":\"Meeting Minute\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"9f3e39e141\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"__unedited\":false,\"attendee\":\"abhishek@bloomstack.com\"}],\"__last_sync_on\":\"2020-08-17T06:43:52.777Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 17, in validate
+    attendee.full_name = " ".join(filter(NameError,[user.first_name,user.middle_name,user.last_name]))
+TypeError: sequence item 1: expected str instance, NoneType found
+[ERROR] 2020-08-17 12:15:15,617 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:15:15.447776-127.0.0.1-660
+[ERROR] 2020-08-17 12:20:11,947 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Meeting\",\"name\":\"New Meeting 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Invited\",\"from_time\":\"12:15:35\",\"to_time\":\"12:15:35\",\"agenda\":[{\"docstatus\":0,\"doctype\":\"Meeting Agenda\",\"name\":\"New Meeting Agenda 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"parent\":\"New Meeting 1\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"__unedited\":false,\"description\":\"<div>Communication</div>\"}],\"minutes\":[{\"docstatus\":0,\"doctype\":\"Meeting Minute\",\"name\":\"New Meeting Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Open\",\"parent\":\"New Meeting 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"assigned_to\":\"manish@bloomstack.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Meeting 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"attendee\":\"saroj@bloomstack.com\"}],\"title\":\"Frontend\",\"date\":\"2020-08-17\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 296, in _save
+    self.insert()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 230, in insert
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 17, in validate
+    attendee.full_name = " ".join(filter(NameError,[user.first_name,user.middle_name,user.last_name]))
+TypeError: sequence item 1: expected str instance, NoneType found
+[ERROR] 2020-08-17 12:20:11,961 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:20:11.947881-127.0.0.1-f0a
+[ERROR] 2020-08-17 12:23:26,073 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Meeting\",\"name\":\"New Meeting 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Invited\",\"from_time\":\"12:15:35\",\"to_time\":\"12:15:35\",\"agenda\":[{\"docstatus\":0,\"doctype\":\"Meeting Agenda\",\"name\":\"New Meeting Agenda 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"parent\":\"New Meeting 1\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"__unedited\":false,\"description\":\"<div>Communication</div>\"}],\"minutes\":[{\"docstatus\":0,\"doctype\":\"Meeting Minute\",\"name\":\"New Meeting Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Open\",\"parent\":\"New Meeting 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"assigned_to\":\"manish@bloomstack.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Meeting 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"attendee\":\"saroj@bloomstack.com\"}],\"title\":\"Frontend\",\"date\":\"2020-08-17\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 12, in savedocs
+    doc = frappe.get_doc(json.loads(doc))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 752, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 69, in get_doc
+    controller = get_controller(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in get_controller
+    module = load_doctype_module(doctype, module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 16
+    print(attendee.full_name)
+                            ^
+TabError: inconsistent use of tabs and spaces in indentation
+[ERROR] 2020-08-17 12:23:26,303 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:23:26.084394-127.0.0.1-090
+[ERROR] 2020-08-17 12:23:45,350 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Meeting\",\"name\":\"New Meeting 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Invited\",\"from_time\":\"12:15:35\",\"to_time\":\"12:15:35\",\"agenda\":[{\"docstatus\":0,\"doctype\":\"Meeting Agenda\",\"name\":\"New Meeting Agenda 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"parent\":\"New Meeting 1\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"__unedited\":false,\"description\":\"<div>Communication</div>\"}],\"minutes\":[{\"docstatus\":0,\"doctype\":\"Meeting Minute\",\"name\":\"New Meeting Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Open\",\"parent\":\"New Meeting 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"assigned_to\":\"manish@bloomstack.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Meeting 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"attendee\":\"saroj@bloomstack.com\"}],\"title\":\"Frontend\",\"date\":\"2020-08-17\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 12, in savedocs
+    doc = frappe.get_doc(json.loads(doc))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 752, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 69, in get_doc
+    controller = get_controller(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in get_controller
+    module = load_doctype_module(doctype, module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 15
+    print(attendee.full_name)
+                            ^
+TabError: inconsistent use of tabs and spaces in indentation
+[ERROR] 2020-08-17 12:23:45,534 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:23:45.351810-127.0.0.1-a31
+[ERROR] 2020-08-17 12:25:53,125 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Meeting\",\"name\":\"New Meeting 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Invited\",\"from_time\":\"12:24:17\",\"to_time\":\"12:24:17\",\"agenda\":[{\"docstatus\":0,\"doctype\":\"Meeting Agenda\",\"name\":\"New Meeting Agenda 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"parent\":\"New Meeting 1\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"__unedited\":false,\"description\":\"<div>something happens</div>\"}],\"minutes\":[{\"docstatus\":0,\"doctype\":\"Meeting Minute\",\"name\":\"New Meeting Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"status\":\"Open\",\"parent\":\"New Meeting 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"assigned_to\":\"saroj@bloomstack.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Meeting 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"attendee\":\"saroj@bloomstack.com\"}],\"title\":\"something\",\"date\":\"2020-08-17\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 296, in _save
+    self.insert()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 230, in insert
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 17, in validate
+    attendee.full_name = " ".join(filter(NameError,[user.first_name,user.middle_name,user.last_name]))
+TypeError: sequence item 1: expected str instance, NoneType found
+[ERROR] 2020-08-17 12:25:53,335 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:25:53.127220-127.0.0.1-20a
+[ERROR] 2020-08-17 12:39:09,370 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Meeting",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 21
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+[ERROR] 2020-08-17 12:39:09,990 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:39:09.380106-127.0.0.1-9d0
+[ERROR] 2020-08-17 12:43:19,766 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"9f3e39e141\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-17 12:33:26.840546\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Standup\",\"status\":\"Invited\",\"date\":\"2020-08-16\",\"from_time\":\"22:30:40\",\"to_time\":\"23:00:40\",\"doctype\":\"Meeting\",\"agenda\":[{\"name\":\"64f782c2f4\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-17 12:33:26.840546\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"agenda\",\"parenttype\":\"Meeting\",\"idx\":1,\"docstatus\":0,\"description\":\"Discussed abut issue\",\"doctype\":\"Meeting Agenda\"}],\"minutes\":[{\"name\":\"e10e6a119b\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-17 12:33:26.840546\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"minutes\",\"parenttype\":\"Meeting\",\"idx\":1,\"docstatus\":0,\"discussion\":\"Discussed error\",\"assigned_to\":\"saroj@bloomstack.com\",\"completed_by\":\"2020-08-15\",\"status\":\"Open\",\"doctype\":\"Meeting Minute\"}],\"attendees\":[{\"name\":\"9b511f6635\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-17 12:33:26.840546\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":1,\"docstatus\":0,\"attendee\":\"saroj@bloomstack.com\",\"full_name\":\"Saroj\",\"accepted\":0,\"attended\":0,\"doctype\":\"Meeting Attendee\"},{\"name\":\"294777a2a4\",\"owner\":\"Administrator\",\"creation\":\"2020-08-16 23:58:56.139738\",\"modified\":\"2020-08-17 12:33:26.840546\",\"modified_by\":\"Administrator\",\"parent\":\"9f3e39e141\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":2,\"docstatus\":0,\"attendee\":\"saroj@digithinkit.com\",\"full_name\":\"Shubhangi Meshram\",\"accepted\":0,\"attended\":0,\"doctype\":\"Meeting Attendee\"},{\"docstatus\":0,\"doctype\":\"Meeting Attendee\",\"name\":\"New Meeting Attendee 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"9f3e39e141\",\"parentfield\":\"attendees\",\"parenttype\":\"Meeting\",\"idx\":3,\"__unedited\":false,\"attendee\":\"meshramsaroj24@gmail.com\"}],\"__last_sync_on\":\"2020-08-17T07:10:25.075Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/meeting/meeting/meeting/doctype/meeting/meeting.py", line 15, in validate
+    attendee.full_name = get_fullName(attendee.attendee)
+NameError: name 'get_fullName' is not defined
+[ERROR] 2020-08-17 12:43:20,188 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 12:43:19.796470-127.0.0.1-0e9
+[ERROR] 2020-08-17 14:42:28,575 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cmd": "frappe.desk.search.search_link"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: search_link() missing 2 required positional arguments: 'doctype' and 'txt'
+[ERROR] 2020-08-17 14:42:30,720 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 14:42:28.635295-127.0.0.1-ad1
+[ERROR] 2020-08-17 14:43:26,968 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Meeting",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 49, in load_assets
+    self.add_code()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 81, in add_code
+    path = os.path.join(get_module_path(self.module), 'doctype', scrub(self.name))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 166, in get_module_path
+    return frappe.get_module_path(module)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 842, in get_module_path
+    return get_pymodule_path(local.module_app[module] + "." + module, *joins)
+KeyError: 'meeting'
+[ERROR] 2020-08-17 14:43:27,015 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 14:43:26.970795-127.0.0.1-ece
+[ERROR] 2020-08-17 14:43:55,508 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Meeting",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 49, in load_assets
+    self.add_code()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 81, in add_code
+    path = os.path.join(get_module_path(self.module), 'doctype', scrub(self.name))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 166, in get_module_path
+    return frappe.get_module_path(module)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 842, in get_module_path
+    return get_pymodule_path(local.module_app[module] + "." + module, *joins)
+KeyError: 'meeting'
+[ERROR] 2020-08-17 14:43:55,515 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 14:43:55.509316-127.0.0.1-a56
+[ERROR] 2020-08-17 14:44:24,134 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"Meeting\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 12:11:32.738815\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"idx\":0,\"issingle\":0,\"is_tree\":0,\"istable\":0,\"editable_grid\":1,\"track_changes\":1,\"module\":\"Meeting\",\"autoname\":\"field:title\",\"name_case\":\"\",\"sort_field\":\"modified\",\"sort_order\":\"DESC\",\"read_only\":0,\"in_create\":0,\"allow_copy\":0,\"allow_rename\":0,\"allow_import\":0,\"hide_toolbar\":0,\"track_seen\":0,\"max_attachments\":0,\"document_type\":\"\",\"engine\":\"InnoDB\",\"is_submittable\":0,\"show_name_in_global_search\":0,\"custom\":0,\"beta\":0,\"has_web_view\":0,\"allow_guest_to_view\":0,\"quick_entry\":1,\"track_views\":0,\"allow_events_in_timeline\":0,\"allow_auto_repeat\":0,\"show_preview_popup\":0,\"doctype\":\"DocType\",\"fields\":[{\"name\":\"20c9ea117e\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":1,\"fieldname\":\"title\",\"label\":\"Title\",\"fieldtype\":\"Data\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":1,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"99d27597ac\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":2,\"fieldname\":\"status\",\"label\":\"Status\",\"fieldtype\":\"Select\",\"options\":\"Invited\\nCanceled\\nIn Progress\\nClosed\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"0a7ce44731\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":3,\"fieldname\":\"column_break_4\",\"fieldtype\":\"Column Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"d0f52134ba\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":4,\"fieldname\":\"date\",\"label\":\"Date\",\"fieldtype\":\"Date\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"6fef79f69f\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":5,\"fieldname\":\"from_time\",\"label\":\"From Time\",\"fieldtype\":\"Time\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"63af2554a5\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":6,\"fieldname\":\"to_time\",\"label\":\"To Time\",\"fieldtype\":\"Time\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"ce09cd65a7\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":7,\"fieldname\":\"agenda_section\",\"label\":\"Agenda\",\"fieldtype\":\"Section Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":1,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"9490359105\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":8,\"fieldname\":\"agenda\",\"label\":\"Agenda\",\"fieldtype\":\"Table\",\"options\":\"Meeting Agenda\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"05d302615e\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":9,\"fieldname\":\"minutes_section\",\"label\":\"Minutes\",\"fieldtype\":\"Section Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":1,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"6ceb29d211\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":10,\"fieldname\":\"minutes\",\"label\":\"Minutes\",\"fieldtype\":\"Table\",\"options\":\"Meeting Minute\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"cd003cf9c6\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":11,\"fieldname\":\"attendees_section\",\"label\":\"Attendees\",\"fieldtype\":\"Section Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":1,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"6e692ebedd\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":12,\"fieldname\":\"attendees\",\"label\":\"Attendees\",\"fieldtype\":\"Table\",\"options\":\"Meeting Attendee\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"}],\"permissions\":[{\"name\":\"4f436470eb\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"permissions\",\"parenttype\":\"DocType\",\"idx\":1,\"permlevel\":0,\"role\":\"System Manager\",\"read\":1,\"write\":1,\"create\":1,\"submit\":0,\"cancel\":0,\"delete\":1,\"amend\":0,\"report\":1,\"export\":1,\"import\":0,\"share\":1,\"print\":1,\"email\":1,\"if_owner\":0,\"set_user_permissions\":0,\"doctype\":\"DocPerm\"},{\"name\":\"c39b364e3b\",\"creation\":\"2020-08-16 23:31:38.956275\",\"modified\":\"2020-08-17 11:10:44.544208\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Meeting\",\"parentfield\":\"permissions\",\"parenttype\":\"DocType\",\"idx\":2,\"permlevel\":0,\"role\":\"Meeting Manager\",\"read\":1,\"write\":1,\"create\":1,\"submit\":0,\"cancel\":0,\"delete\":1,\"amend\":0,\"report\":1,\"export\":1,\"import\":0,\"share\":1,\"print\":1,\"email\":1,\"if_owner\":0,\"set_user_permissions\":0,\"doctype\":\"DocPerm\"}],\"__last_sync_on\":\"2020-08-17T09:14:16.600Z\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 326, in _save
+    self.run_post_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 927, in run_post_save_methods
+    self.run_method("on_update")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 292, in on_update
+    self.export_doc()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 537, in export_doc
+    export_to_files(record_list=[['DocType', self.name]], create_init=True)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/export_file.py", line 22, in export_to_files
+    write_document_file(frappe.get_doc(record[0], record[1]), record_module, create_init=create_init)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/export_file.py", line 26, in write_document_file
+    doc.run_method("before_export", newdoc)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 483, in before_export
+    path = get_file_path(self.module, "DocType", self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/import_file.py", line 38, in get_file_path
+    path = os.path.join(get_module_path(module),
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 166, in get_module_path
+    return frappe.get_module_path(module)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 842, in get_module_path
+    return get_pymodule_path(local.module_app[module] + "." + module, *joins)
+KeyError: 'meeting'
+[ERROR] 2020-08-17 14:44:24,161 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 14:44:24.135855-127.0.0.1-607
+[ERROR] 2020-08-17 16:33:15,912 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'meeting'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'meeting'
+[ERROR] 2020-08-17 16:33:15,991 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cmd": "frappe.realtime.get_user_info"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: get_user_info() missing 1 required positional argument: 'sid'
+[ERROR] 2020-08-17 16:33:15,996 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Form Dict: {
+ "cmd": "frappe.realtime.get_user_info"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: get_user_info() missing 1 required positional argument: 'sid'
+[ERROR] 2020-08-17 16:33:17,242 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 16:33:16.227633-127.0.0.1-857
+[ERROR] 2020-08-17 16:33:17,242 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 16:33:16.221821-127.0.0.1-e8e
+[ERROR] 2020-08-17 16:33:17,246 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 16:33:16.218464-127.0.0.1-06b
+[ERROR] 2020-08-17 16:34:12,786 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.dev
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'meeting'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'meeting'
+[ERROR] 2020-08-17 16:34:13,051 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 16:34:12.855540-127.0.0.1-a08
+[ERROR] 2020-08-17 17:35:22,696 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "frappe.realtime.get_user_info"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: get_user_info() missing 1 required positional argument: 'sid'
+[ERROR] 2020-08-17 17:35:23,002 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 17:35:22.815504-127.0.0.1-441
+[ERROR] 2020-08-17 18:29:13,546 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"Test Attendees\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"idx\":0,\"issingle\":0,\"is_tree\":0,\"istable\":1,\"editable_grid\":1,\"track_changes\":1,\"module\":\"Test App\",\"autoname\":\"\",\"name_case\":\"\",\"sort_field\":\"modified\",\"sort_order\":\"DESC\",\"read_only\":0,\"in_create\":0,\"allow_copy\":0,\"allow_rename\":0,\"allow_import\":0,\"hide_toolbar\":0,\"track_seen\":0,\"max_attachments\":0,\"document_type\":\"\",\"engine\":\"InnoDB\",\"is_submittable\":0,\"show_name_in_global_search\":0,\"custom\":0,\"beta\":0,\"has_web_view\":0,\"allow_guest_to_view\":0,\"quick_entry\":1,\"track_views\":0,\"allow_events_in_timeline\":0,\"allow_auto_repeat\":0,\"show_preview_popup\":0,\"doctype\":\"DocType\",\"fields\":[{\"name\":\"4e986f58a0\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":1,\"fieldname\":\"attendees\",\"label\":\"Attendees\",\"fieldtype\":\"Link\",\"options\":\"User\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"7904c9c06a\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":2,\"fieldname\":\"full_name\",\"label\":\"Full Name\",\"fieldtype\":\"Text\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":1,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"7b489d8312\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":3,\"fieldname\":\"column_break_3\",\"fieldtype\":\"Column Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"4be0d5946e\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":4,\"fieldname\":\"accepted\",\"label\":\"Accepted ?\",\"fieldtype\":\"Check\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"default\":\"0\",\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"9c2a651816\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:27:12.511304\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":5,\"fieldname\":\"attended\",\"label\":\"Attended ?\",\"fieldtype\":\"Check\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"default\":\"0\",\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"}],\"permissions\":[],\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 326, in _save
+    self.run_post_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 927, in run_post_save_methods
+    self.run_method("on_update")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 282, in on_update
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 279, in on_update
+    frappe.db.updatedb(self.name, Meta(self))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 291, in updatedb
+    db_table.sync()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/schema.py", line 37, in sync
+    self.alter()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py", line 86, in alter
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py", line 75, in alter
+    frappe.db.sql(query)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/database.py", line 171, in sql
+    self._cursor.execute(query)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1170, "BLOB/TEXT column 'full_name' used in key specification without a key length")
+[ERROR] 2020-08-17 18:29:16,554 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 18:29:13.593432-127.0.0.1-267
+[ERROR] 2020-08-17 18:30:45,357 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"Test Attendees\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"idx\":0,\"issingle\":0,\"is_tree\":0,\"istable\":1,\"editable_grid\":1,\"track_changes\":1,\"module\":\"Test App\",\"autoname\":\"\",\"name_case\":\"\",\"sort_field\":\"modified\",\"sort_order\":\"DESC\",\"read_only\":0,\"in_create\":0,\"allow_copy\":0,\"allow_rename\":0,\"allow_import\":0,\"hide_toolbar\":0,\"track_seen\":0,\"max_attachments\":0,\"document_type\":\"\",\"engine\":\"InnoDB\",\"is_submittable\":0,\"show_name_in_global_search\":0,\"custom\":0,\"beta\":0,\"has_web_view\":0,\"allow_guest_to_view\":0,\"quick_entry\":1,\"track_views\":0,\"allow_events_in_timeline\":0,\"allow_auto_repeat\":0,\"show_preview_popup\":0,\"doctype\":\"DocType\",\"fields\":[{\"name\":\"4e986f58a0\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":1,\"fieldname\":\"attendees\",\"label\":\"Attendees\",\"fieldtype\":\"Link\",\"options\":\"User\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":1,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"7904c9c06a\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":2,\"fieldname\":\"full_name\",\"label\":\"Full Name\",\"fieldtype\":\"Text\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":1,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"7b489d8312\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":3,\"fieldname\":\"column_break_3\",\"fieldtype\":\"Column Break\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"in_list_view\":0,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"4be0d5946e\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":4,\"fieldname\":\"accepted\",\"label\":\"Accepted ?\",\"fieldtype\":\"Check\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"default\":\"0\",\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"},{\"name\":\"9c2a651816\",\"creation\":\"2020-08-17 17:58:22.055014\",\"modified\":\"2020-08-17 18:29:13.188204\",\"modified_by\":\"Administrator\",\"owner\":\"Administrator\",\"docstatus\":0,\"parent\":\"Test Attendees\",\"parentfield\":\"fields\",\"parenttype\":\"DocType\",\"idx\":5,\"fieldname\":\"attended\",\"label\":\"Attended ?\",\"fieldtype\":\"Check\",\"search_index\":0,\"hidden\":0,\"set_only_once\":0,\"allow_in_quick_entry\":0,\"print_hide\":0,\"report_hide\":0,\"reqd\":0,\"bold\":0,\"in_global_search\":0,\"collapsible\":0,\"unique\":0,\"no_copy\":0,\"allow_on_submit\":0,\"show_preview_popup\":0,\"permlevel\":0,\"ignore_user_permissions\":0,\"columns\":0,\"default\":\"0\",\"in_list_view\":1,\"fetch_if_empty\":0,\"in_filter\":0,\"remember_last_selected_value\":0,\"ignore_xss_filter\":0,\"print_hide_if_no_value\":0,\"allow_bulk_edit\":0,\"in_standard_filter\":0,\"in_preview\":0,\"read_only\":0,\"precision\":\"\",\"length\":0,\"translatable\":0,\"doctype\":\"DocField\"}],\"permissions\":[],\"__last_sync_on\":\"2020-08-17T13:00:34.580Z\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 326, in _save
+    self.run_post_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 927, in run_post_save_methods
+    self.run_method("on_update")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 282, in on_update
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/core/doctype/doctype/doctype.py", line 279, in on_update
+    frappe.db.updatedb(self.name, Meta(self))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 291, in updatedb
+    db_table.sync()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/schema.py", line 37, in sync
+    self.alter()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py", line 86, in alter
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/mariadb/schema.py", line 75, in alter
+    frappe.db.sql(query)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/database/database.py", line 171, in sql
+    self._cursor.execute(query)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1170, "BLOB/TEXT column 'full_name' used in key specification without a key length")
+[ERROR] 2020-08-17 18:30:45,389 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 18:30:45.358785-127.0.0.1-2ca
+[ERROR] 2020-08-17 19:17:38,413 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cached_timestamp": "2020-08-17 18:32:12.413712",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Test",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 14
+    if not attendee.full_name:
+     ^
+IndentationError: expected an indented block
+[ERROR] 2020-08-17 19:17:38,915 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:17:38.439057-127.0.0.1-12d
+[ERROR] 2020-08-17 19:18:09,480 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Test",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 14
+    if not attendee.full_name:
+                             ^
+TabError: inconsistent use of tabs and spaces in indentation
+[ERROR] 2020-08-17 19:18:10,025 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:18:09.484114-127.0.0.1-607
+[ERROR] 2020-08-17 19:18:19,684 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Test",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 14
+    if not attendee.full_name:
+                             ^
+TabError: inconsistent use of tabs and spaces in indentation
+[ERROR] 2020-08-17 19:18:19,789 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:18:19.685847-127.0.0.1-22a
+[ERROR] 2020-08-17 19:20:08,459 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Test",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 17
+    if attendee.attendee in found:
+                                 ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-17 19:20:09,250 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:20:08.480337-127.0.0.1-be1
+[ERROR] 2020-08-17 19:21:21,227 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cached_timestamp": "",
+ "cmd": "frappe.desk.form.load.getdoctype",
+ "doctype": "Test",
+ "with_parent": "1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 70, in getdoctype
+    docs = get_meta_bundle(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/load.py", line 80, in get_meta_bundle
+    bundle = [frappe.desk.form.meta.get_meta(doctype)]
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 29, in get_meta
+    meta = FormMeta(doctype)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 39, in __init__
+    self.load_assets()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 53, in load_assets
+    self.load_templates()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/meta.py", line 179, in load_templates
+    module = load_doctype_module(self.name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/modules/utils.py", line 204, in load_doctype_module
+    doctype_python_modules[key] = frappe.get_module(module_name)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 17
+    if attendee.attendee in found:
+                                 ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-17 19:21:21,799 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:21:21.244423-127.0.0.1-c9f

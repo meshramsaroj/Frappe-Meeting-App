@@ -1,0 +1,32 @@
+Backup Summary at 2020-08-17 00:01:06.956728
+--------------------------------------------
+Database backup: ./meeting.dev/private/backups/20200817_000104-meeting_dev-database.sql.gz
+Backup Summary at 2020-08-17 18:00:42.750364
+--------------------------------------------
+Database backup: ./meeting.demo/private/backups/20200817_180031-meeting_demo-database.sql.gz
+Backup Summary at 2020-08-18 18:00:16.789174
+--------------------------------------------
+Database backup: ./meeting.demo/private/backups/20200818_180013-meeting_demo-database.sql.gz
+Backup Summary at 2020-08-18 18:00:30.321480
+--------------------------------------------
+Database backup: ./test-site/private/backups/20200818_180016-test-site-database.sql.gz
+Backup Summary at 2020-08-19 05:31:05.733111
+--------------------------------------------
+Database backup: ./bloomstack/private/backups/20200819_053047-bloomstack-database.sql.gz
+File is recent
+File is recent
+Backup Summary at 2020-08-19 18:01:13.458657
+--------------------------------------------
+Database backup: ./bloomstack-site/private/backups/20200819_180105-bloomstack-site-database.sql.gz
+File is recent
+File is old
+File is recent
+Backup Summary at 2020-08-19 18:01:21.845911
+--------------------------------------------
+Database backup: ./meeting.demo/private/backups/20200819_180113-meeting_demo-database.sql.gz
+File is old
+File is recent
+File is recent
+Backup Summary at 2020-08-19 18:01:30.347182
+--------------------------------------------
+Database backup: ./test-site/private/backups/20200819_180121-test-site-database.sql.gz

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include meeting_demo *.css
+recursive-include meeting_demo *.csv
+recursive-include meeting_demo *.html
+recursive-include meeting_demo *.ico
+recursive-include meeting_demo *.js
+recursive-include meeting_demo *.json
+recursive-include meeting_demo *.md
+recursive-include meeting_demo *.png
+recursive-include meeting_demo *.py
+recursive-include meeting_demo *.svg
+recursive-include meeting_demo *.txt
+recursive-exclude meeting_demo *.pyc

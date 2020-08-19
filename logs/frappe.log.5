@@ -1,0 +1,1442 @@
+[ERROR] 2020-08-17 19:21:57,369 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"21702ab631\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Setup\",\"date\":\"2020-08-17\",\"from_time\":\"19:06:55\",\"to_time\":\"19:06:55\",\"doctype\":\"Test\",\"attendees\":[{\"name\":\"0727bc9414\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"parent\":\"21702ab631\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":0,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-17T13:51:50.385Z\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    attendee.full_name = get_fullName(attendee.attendee)
+AttributeError: 'TestAttendees' object has no attribute 'attendee'
+[ERROR] 2020-08-17 19:21:57,581 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:21:57.394664-127.0.0.1-bc6
+[ERROR] 2020-08-17 19:25:27,574 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"21702ab631\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Setup\",\"date\":\"2020-08-17\",\"from_time\":\"19:06:55\",\"to_time\":\"19:06:55\",\"doctype\":\"Test\",\"attendees\":[{\"name\":\"0727bc9414\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"parent\":\"21702ab631\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":0,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-17T13:55:22.461Z\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 16, in validate
+    attendee.full_name = get_fullName(attendee.attendees)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 26, in get_fullName
+    user = frappe.get_doc("User", attendee)
+NameError: name 'frappe' is not defined
+[ERROR] 2020-08-17 19:25:27,745 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:25:27.575018-127.0.0.1-a34
+[ERROR] 2020-08-17 19:25:48,006 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"21702ab631\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Setup\",\"date\":\"2020-08-17\",\"from_time\":\"19:06:55\",\"to_time\":\"19:06:55\",\"doctype\":\"Test\",\"attendees\":[{\"name\":\"0727bc9414\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:07:23.150754\",\"modified_by\":\"Administrator\",\"parent\":\"21702ab631\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":0,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-17T13:55:43.578Z\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 18, in validate
+    if attendee.attendee in found:
+AttributeError: 'TestAttendees' object has no attribute 'attendee'
+[ERROR] 2020-08-17 19:25:48,320 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:25:48.007427-127.0.0.1-43b
+[ERROR] 2020-08-17 19:43:28,717 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"21702ab631\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:38:11.772310\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Setup\",\"date\":\"2020-08-17\",\"from_time\":\"19:06:55\",\"to_time\":\"19:06:55\",\"doctype\":\"Test\",\"attendees\":[{\"name\":\"673ca1b489\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 19:07:23.150754\",\"modified\":\"2020-08-17 19:38:11.772310\",\"modified_by\":\"Administrator\",\"parent\":\"21702ab631\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"neha@bloomstack.com\",\"full_name\":\"Neha\",\"accepted\":0,\"attended\":0,\"doctype\":\"Test Attendees\"},{\"docstatus\":0,\"doctype\":\"Test Attendees\",\"name\":\"New Test Attendees 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"21702ab631\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":2,\"__unedited\":false,\"attendees\":\"saroj@gmail.com\"}],\"__last_sync_on\":\"2020-08-17T14:11:09.322Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-17 19:43:29,203 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-17 19:43:28.744326-127.0.0.1-5df
+[ERROR] 2020-08-18 10:42:22,541 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Test\",\"name\":\"New Test 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"from_time\":\"10:37:30\",\"to_time\":\"10:37:30\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"New Test 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"discussion\":\"test 3\",\"assigned_to\":\"saroj@gmail.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Test Attendees\",\"name\":\"New Test Attendees 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Test 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"attendees\":\"neha@bloomstack.com\"}],\"title\":\"test 3\",\"date\":\"2020-08-18\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 296, in _save
+    self.insert()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 230, in insert
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:42:27,212 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:42:22.684176-127.0.0.1-759
+[ERROR] 2020-08-18 10:43:50,906 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"docstatus\":0,\"doctype\":\"Test\",\"name\":\"New Test 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"from_time\":\"10:37:30\",\"to_time\":\"10:37:30\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"New Test 1\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"discussion\":\"test 3\",\"assigned_to\":\"saroj@gmail.com\"}],\"attendees\":[{\"docstatus\":0,\"doctype\":\"Test Attendees\",\"name\":\"New Test Attendees 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"accepted\":0,\"attended\":0,\"parent\":\"New Test 1\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"attendees\":\"neha@bloomstack.com\"}],\"title\":\"test 3\",\"date\":\"2020-08-18\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 296, in _save
+    self.insert()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 230, in insert
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:43:50,917 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:43:50.907340-127.0.0.1-308
+[ERROR] 2020-08-18 10:44:43,051 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"6ac76e3697\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Test 1\",\"date\":\"2020-08-17\",\"from_time\":\"18:32:18\",\"to_time\":\"18:32:18\",\"doctype\":\"Test\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"6ac76e3697\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"__unedited\":false,\"discussion\":\"something\",\"assigned_to\":\"neha@bloomstack.com\"}],\"attendees\":[{\"name\":\"ed628f76de\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"parent\":\"6ac76e3697\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":1,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-18T05:14:10.814Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:44:43,061 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:44:43.052273-127.0.0.1-634
+[ERROR] 2020-08-18 10:45:12,510 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"6ac76e3697\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Test 1\",\"date\":\"2020-08-17\",\"from_time\":\"18:32:18\",\"to_time\":\"18:32:18\",\"doctype\":\"Test\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"6ac76e3697\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"__unedited\":false,\"discussion\":\"something\",\"assigned_to\":\"neha@bloomstack.com\"}],\"attendees\":[{\"name\":\"ed628f76de\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"parent\":\"6ac76e3697\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":1,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-18T05:14:10.814Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:45:12,543 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:45:12.511253-127.0.0.1-8cd
+[ERROR] 2020-08-18 10:45:40,200 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"6ac76e3697\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Test 1\",\"date\":\"2020-08-17\",\"from_time\":\"18:32:18\",\"to_time\":\"18:32:18\",\"doctype\":\"Test\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"6ac76e3697\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"__unedited\":false,\"discussion\":\"something\",\"assigned_to\":\"neha@bloomstack.com\"}],\"attendees\":[{\"name\":\"ed628f76de\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"parent\":\"6ac76e3697\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":1,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-18T05:14:10.814Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:45:40,207 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:45:40.201752-127.0.0.1-c33
+[ERROR] 2020-08-18 10:45:56,723 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"6ac76e3697\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Test 1\",\"date\":\"2020-08-17\",\"from_time\":\"18:32:18\",\"to_time\":\"18:32:18\",\"doctype\":\"Test\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 2\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"6ac76e3697\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"__unedited\":false,\"discussion\":\"something\",\"assigned_to\":\"neha@bloomstack.com\"}],\"attendees\":[{\"name\":\"ed628f76de\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"parent\":\"6ac76e3697\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":1,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-18T05:14:10.814Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:45:56,736 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:45:56.724309-127.0.0.1-08c
+[ERROR] 2020-08-18 10:47:42,852 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "action": "Save",
+ "cmd": "frappe.desk.form.save.savedocs",
+ "doc": "{\"name\":\"6ac76e3697\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"idx\":0,\"docstatus\":0,\"title\":\"Test 1\",\"date\":\"2020-08-17\",\"from_time\":\"18:32:18\",\"to_time\":\"18:32:18\",\"doctype\":\"Test\",\"minutes\":[{\"docstatus\":0,\"doctype\":\"Test Minute\",\"name\":\"New Test Minute 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"action\":\"Open\",\"parent\":\"6ac76e3697\",\"parentfield\":\"minutes\",\"parenttype\":\"Test\",\"idx\":1,\"__unedited\":false,\"discussion\":\"Minute 1\",\"assigned_to\":\"saroj@gmail.com\"}],\"attendees\":[{\"name\":\"ed628f76de\",\"owner\":\"Administrator\",\"creation\":\"2020-08-17 18:32:45.692023\",\"modified\":\"2020-08-17 18:32:45.692023\",\"modified_by\":\"Administrator\",\"parent\":\"6ac76e3697\",\"parentfield\":\"attendees\",\"parenttype\":\"Test\",\"idx\":1,\"docstatus\":0,\"attendees\":\"saroj@gmail.com\",\"accepted\":0,\"attended\":1,\"doctype\":\"Test Attendees\"}],\"__last_sync_on\":\"2020-08-18T05:17:19.013Z\",\"__unsaved\":1}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 22, in savedocs
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in _save
+    self.run_before_save_methods()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 896, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1054, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 791, in <lambda>
+    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/test_app/doctype/test/test.py", line 15, in validate
+    print("-----------------------",self.attendee.as_dict())
+AttributeError: 'Test' object has no attribute 'attendee'
+[ERROR] 2020-08-18 10:47:42,862 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:47:42.853562-127.0.0.1-f4f
+[ERROR] 2020-08-18 10:51:40,248 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "attendees": "neha@bloomstack.com",
+ "cmd": "test_app.test_app.doctype.test.get_fullName"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+AttributeError: module 'test_app.test_app.doctype.test' has no attribute 'get_fullName'
+[ERROR] 2020-08-18 10:51:40,454 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:51:40.265978-127.0.0.1-070
+[ERROR] 2020-08-18 10:53:45,987 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "attendees": "saroj@gmail.com",
+ "cmd": "test_app.test_app.doctype.test.test.get_fullName"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: get_fullName() missing 1 required positional argument: 'attendee'
+[ERROR] 2020-08-18 10:53:46,206 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 10:53:46.026992-127.0.0.1-572
+[ERROR] 2020-08-18 13:42:44,130 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "6ac76e3697"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 16, in send_invitation_email
+    as_bulk= True
+TypeError: sendmail() got an unexpected keyword argument 'as_bulk'
+[ERROR] 2020-08-18 13:44:11,590 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "6ac76e3697"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 16, in send_invitation_email
+    as_bulk= True
+TypeError: sendmail() got an unexpected keyword argument 'as_bulk'
+[ERROR] 2020-08-18 13:44:11,811 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 13:44:11.600570-127.0.0.1-27c
+[ERROR] 2020-08-18 13:51:03,395 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "21702ab631"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 8
+    if test.status === "Planned":
+                     ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-18 13:51:03,676 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 13:51:03.447004-127.0.0.1-cdc
+[ERROR] 2020-08-18 14:03:35,017 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "21702ab631"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 25
+    else if(test.status !== "Planned"):
+          ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-18 14:03:35,287 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 14:03:35.046144-127.0.0.1-033
+[ERROR] 2020-08-18 14:03:59,817 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "21702ab631"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 25
+    else if(test.status != "Planned"):
+          ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-18 14:03:59,999 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 14:03:59.818989-127.0.0.1-8e6
+[ERROR] 2020-08-18 14:05:39,853 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "21702ab631"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 29
+    else:
+       ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-18 14:05:40,027 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 14:05:39.853903-127.0.0.1-2fa
+[ERROR] 2020-08-18 14:05:51,776 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "test_app.api.send_invitation_email",
+ "test": "21702ab631"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 52, in execute_cmd
+    raise e
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 49, in execute_cmd
+    method = get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 207, in get_attr
+    method = frappe.get_attr(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1045, in get_attr
+    return getattr(get_module(modulename), methodname)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 29
+    else:
+       ^
+SyntaxError: invalid syntax
+[ERROR] 2020-08-18 14:05:51,854 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 14:05:51.777079-127.0.0.1-e48
+[ERROR] 2020-08-18 17:57:14,721 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "frappe.client.save",
+ "doc": "{\"docstatus\":0,\"doctype\":\"User\",\"name\":\"New User 1\",\"__islocal\":1,\"__unsaved\":1,\"owner\":\"Administrator\",\"enabled\":1,\"send_welcome_email\":1,\"unsubscribed\":0,\"language\":\"en\",\"mute_sounds\":0,\"logout_all_sessions\":0,\"document_follow_notify\":0,\"document_follow_frequency\":\"Daily\",\"thread_notify\":1,\"send_me_a_copy\":0,\"allowed_in_mentions\":1,\"simultaneous_sessions\":1,\"user_type\":\"System User\",\"bypass_restrict_ip_check_if_2fa_enabled\":0,\"__run_link_triggers\":1,\"email\":\"naren@gmail.com\",\"first_name\":\"Narendra\",\"last_name\":\"Patil\"}"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/client.py", line 185, in save
+    doc.save()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 273, in save
+    return self._save(*args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 296, in _save
+    self.insert()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 254, in insert
+    self.run_method("after_insert")
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 797, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1071, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/model/document.py", line 1056, in runner
+    add_to_return_value(self, f(self, method, *args, **kwargs))
+  File "/home/saroj/frappe-bench/apps/test_app/test_app/api.py", line 56, in make_orientation_meeting
+    "date": add_days(newdate(),1),
+NameError: name 'newdate' is not defined
+[ERROR] 2020-08-18 17:57:14,977 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 17:57:14.826393-127.0.0.1-97d
+[ERROR] 2020-08-18 18:02:57,676 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: meeting.demo
+Form Dict: {
+ "cmd": "frappe.realtime.get_user_info"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 64, in application
+    response = frappe.api.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/api.py", line 59, in handle
+    return frappe.handler.handle()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 24, in handle
+    data = execute_cmd(cmd)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/handler.py", line 63, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 1054, in call
+    return fn(*args, **newargs)
+TypeError: get_user_info() missing 1 required positional argument: 'sid'
+[ERROR] 2020-08-18 18:02:57,862 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-18 18:02:57.704164-127.0.0.1-62f
+[ERROR] 2020-08-19 15:53:53,637 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:53,637 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:53,638 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:53,638 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:53,753 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+Could not take error snapshot: [Errno 17] File exists: './bloomstack/error-snapshots'
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py", line 33, in make_error_snapshot
+    frappe.create_folder(snapshot_folder)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 391, in create_folder
+    os.makedirs(path)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: './bloomstack/error-snapshots'
+[ERROR] 2020-08-19 15:53:53,753 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+Could not take error snapshot: [Errno 17] File exists: './bloomstack/error-snapshots'
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py", line 33, in make_error_snapshot
+    frappe.create_folder(snapshot_folder)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 391, in create_folder
+    os.makedirs(path)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: './bloomstack/error-snapshots'
+[ERROR] 2020-08-19 15:53:53,960 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:53:53.719416-127.0.0.1-f23
+[ERROR] 2020-08-19 15:53:53,960 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:53:53.719416-127.0.0.1-f23
+[ERROR] 2020-08-19 15:53:56,744 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:56,744 | /home/saroj/frappe-bench/apps/frappe/frappe/app.py:
+Site: bloomstack
+Site: bloomstack
+Request Error
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 50, in render
+    data = render_page_by_language(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 177, in render_page_by_language
+    return render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/app.py", line 73, in application
+    response = frappe.website.render.render()
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 80, in render
+    data = render_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 193, in render_page
+    return build(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 200, in build
+    return build_page(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py", line 215, in build_page
+    context = get_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py", line 15, in get_context
+    context = get_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 42, in get_page_context
+    page_context = make_page_context(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 50, in make_page_context
+    context = resolve_route(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 25, in resolve_route
+    context = get_page_info_from_template(path)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py", line 66, in get_page_info_from_template
+    app_path = frappe.get_app_path(app)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 849, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 864, in get_pymodule_path
+    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)
+  File "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py", line 826, in get_module
+    return importlib.import_module(modulename)
+  File "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'bloomstack_demo'
+[ERROR] 2020-08-19 15:53:56,765 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:53:56.745502-127.0.0.1-e8c
+[ERROR] 2020-08-19 15:53:56,765 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:53:56.745502-127.0.0.1-e8c
+[ERROR] 2020-08-19 15:54:02,566 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:02.536939-127.0.0.1-5c7
+[ERROR] 2020-08-19 15:54:02,566 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:02.536939-127.0.0.1-5c7
+[ERROR] 2020-08-19 15:54:29,350 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:29.299829-127.0.0.1-4d5
+[ERROR] 2020-08-19 15:54:29,350 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:29.299829-127.0.0.1-4d5
+[ERROR] 2020-08-19 15:54:29,358 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:29.300384-127.0.0.1-9f1
+[ERROR] 2020-08-19 15:54:29,358 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:54:29.300384-127.0.0.1-9f1
+[ERROR] 2020-08-19 15:56:58,907 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:56:57.817281-127.0.0.1-f0b
+[ERROR] 2020-08-19 15:56:58,907 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:56:57.817281-127.0.0.1-f0b
+[ERROR] 2020-08-19 15:56:58,915 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:56:57.683320-127.0.0.1-a82
+[ERROR] 2020-08-19 15:56:58,915 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:56:57.683320-127.0.0.1-a82
+[ERROR] 2020-08-19 15:57:03,614 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:57:03.591804-127.0.0.1-f29
+[ERROR] 2020-08-19 15:57:03,614 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:57:03.591804-127.0.0.1-f29
+[ERROR] 2020-08-19 15:58:23,583 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:23.537608-127.0.0.1-be6
+[ERROR] 2020-08-19 15:58:23,583 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:23.537608-127.0.0.1-be6
+[ERROR] 2020-08-19 15:58:42,298 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.269712-127.0.0.1-bdf
+[ERROR] 2020-08-19 15:58:42,298 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.269712-127.0.0.1-bdf
+[ERROR] 2020-08-19 15:58:42,326 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.275239-127.0.0.1-f4c
+[ERROR] 2020-08-19 15:58:42,326 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.275239-127.0.0.1-f4c
+[ERROR] 2020-08-19 15:58:42,751 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.721642-127.0.0.1-a70
+[ERROR] 2020-08-19 15:58:42,751 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:42.721642-127.0.0.1-a70
+[ERROR] 2020-08-19 15:58:47,872 | /home/saroj/frappe-bench/apps/frappe/frappe/utils/error.py:
+New Exception collected with id: 2020-08-19 15:58:47.851599-127.0.0.1-d45

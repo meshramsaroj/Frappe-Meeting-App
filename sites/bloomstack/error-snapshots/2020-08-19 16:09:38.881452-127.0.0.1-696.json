@@ -1,0 +1,469 @@
+{
+ "etype": "ModuleNotFoundError",
+ "evalue": "ModuleNotFoundError(\"No module named 'bloomstack_demo'\")",
+ "exception": {
+  "args": [
+   40,
+   34,
+   78,
+   111,
+   32,
+   109,
+   111,
+   100,
+   117,
+   108,
+   101,
+   32,
+   110,
+   97,
+   109,
+   101,
+   100,
+   32,
+   39,
+   98,
+   108,
+   111,
+   111,
+   109,
+   115,
+   116,
+   97,
+   99,
+   107,
+   95,
+   100,
+   101,
+   109,
+   111,
+   39,
+   34,
+   44,
+   41
+  ],
+  "msg": [
+   34,
+   78,
+   111,
+   32,
+   109,
+   111,
+   100,
+   117,
+   108,
+   101,
+   32,
+   110,
+   97,
+   109,
+   101,
+   100,
+   32,
+   39,
+   98,
+   108,
+   111,
+   111,
+   109,
+   115,
+   116,
+   97,
+   99,
+   107,
+   95,
+   100,
+   101,
+   109,
+   111,
+   39,
+   34
+  ],
+  "name": [
+   39,
+   98,
+   108,
+   111,
+   111,
+   109,
+   115,
+   116,
+   97,
+   99,
+   107,
+   95,
+   100,
+   101,
+   109,
+   111,
+   39
+  ],
+  "path": [
+   78,
+   111,
+   110,
+   101
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   77,
+   111,
+   100,
+   117,
+   108,
+   101,
+   78,
+   111,
+   116,
+   70,
+   111,
+   117,
+   110,
+   100,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://bloomstack:8000/login' [GET]>)",
+   "dump": {
+    "frappe. website": "<module 'frappe.website' from '/home/saroj/frappe-bench/apps/frappe/frappe/website/__init__.py'>",
+    "frappe.website. render": "<module 'frappe.website.render' from '/home/saro...appe-bench/apps/frappe/frappe/website/render.py'>",
+    "frappe.website.render. render": "<function render>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "71": "",
+    "72": "\t\telif frappe.local.request.method in ('GET', 'HEAD', 'POST'):",
+    "73": "\t\t\tresponse = frappe.website.render.render()",
+    "74": "",
+    "75": "\t\telse:"
+   },
+   "lnum": 73
+  },
+  {
+   "call": "(path='error', http_status_code=None)",
+   "dump": {
+    "data": "None",
+    "global render_page": "<function render_page>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py",
+   "func": "render",
+   "lines": {
+    "78": "\t\t\texcept Exception:",
+    "79": "\t\t\t\tpath = \"error\"",
+    "80": "\t\t\t\tdata = render_page(path)",
+    "81": "\t\t\t\thttp_status_code = 500",
+    "82": ""
+   },
+   "lnum": 80
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "global build": "<function build>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py",
+   "func": "render_page",
+   "lines": {
+    "191": "\t\treturn out",
+    "192": "",
+    "193": "\treturn build(path)",
+    "194": "",
+    "195": "def build(path):"
+   },
+   "lnum": 193
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "global build_page": "<function build_page>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py",
+   "func": "build",
+   "lines": {
+    "198": "",
+    "199": "\ttry:",
+    "200": "\t\treturn build_page(path)",
+    "201": "\texcept frappe.DoesNotExistError:",
+    "202": "\t\thooks = frappe.get_hooks()"
+   },
+   "lnum": 200
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "context": "undefined",
+    "global get_context": "<function get_context>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py",
+   "func": "build_page",
+   "lines": {
+    "213": "\t\tfrappe.local.path = path",
+    "214": "",
+    "215": "\tcontext = get_context(path)",
+    "216": "",
+    "217": "\tif context.source:"
+   },
+   "lnum": 215
+  },
+  {
+   "call": "(path='error', args=None)",
+   "dump": {
+    "context": "undefined",
+    "global get_page_context": "<function get_page_context>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py",
+   "func": "get_context",
+   "lines": {
+    "13": "\t\tcontext = args",
+    "14": "\telse:",
+    "15": "\t\tcontext = get_page_context(path)",
+    "16": "\t\tif args:",
+    "17": "\t\t\tcontext.update(args)"
+   },
+   "lnum": 15
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "global make_page_context": "<function make_page_context>",
+    "page_context": "None",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py",
+   "func": "get_page_context",
+   "lines": {
+    "40": "",
+    "41": "\tif not page_context:",
+    "42": "\t\tpage_context = make_page_context(path)",
+    "43": "\t\tif can_cache(page_context.no_cache):",
+    "44": "\t\t\tpage_context_cache[frappe.local.lang] = page_context"
+   },
+   "lnum": 42
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "context": "undefined",
+    "global resolve_route": "<function resolve_route>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py",
+   "func": "make_page_context",
+   "lines": {
+    "48": "",
+    "49": "def make_page_context(path):",
+    "50": "\tcontext = resolve_route(path)",
+    "51": "\tif not context:",
+    "52": "\t\traise frappe.DoesNotExistError"
+   },
+   "lnum": 50
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "context": "undefined",
+    "global get_page_info_from_template": "<function get_page_info_from_template>",
+    "path": "'error'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py",
+   "func": "resolve_route",
+   "lines": {
+    "23": "",
+    "24": "\tif path not in (\"about\", \"contact\"):",
+    "25": "\t\tcontext = get_page_info_from_template(path)",
+    "26": "\t\tif context:",
+    "27": "\t\t\treturn context"
+   },
+   "lnum": 25
+  },
+  {
+   "call": "(path='error')",
+   "dump": {
+    "app": "'bloomstack_demo'",
+    "app_path": "'/home/saroj/frappe-bench/apps/bloomstack_core/bloomstack_core'",
+    "frappe. get_app_path": "<function get_app_path>",
+    "global frappe": "<module 'frappe' from '/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py",
+   "func": "get_page_info_from_template",
+   "lines": {
+    "64": "\t'''Return page_info from path'''",
+    "65": "\tfor app in frappe.get_installed_apps(frappe_last=True):",
+    "66": "\t\tapp_path = frappe.get_app_path(app)",
+    "67": "",
+    "68": "\t\tfolders = get_start_folders()"
+   },
+   "lnum": 66
+  },
+  {
+   "call": "(app_name='bloomstack_demo', *joins=())",
+   "dump": {
+    "app_name": "'bloomstack_demo'",
+    "global get_pymodule_path": "<function get_pymodule_path>",
+    "joins": "()"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "get_app_path",
+   "lines": {
+    "847": "\t:param app: App name.",
+    "848": "\t:param *joins: Join additional path elements using `os.path.join`.\"\"\"",
+    "849": "\treturn get_pymodule_path(app_name, *joins)",
+    "850": "",
+    "851": "def get_site_path(*joins):"
+   },
+   "lnum": 849
+  },
+  {
+   "call": "(modulename='bloomstack_demo', *joins=[])",
+   "dump": {
+    ").__file__": "undefined",
+    "global get_module": "<function get_module>",
+    "global os": "<module 'os' from '/home/saroj/frappe-bench/env/lib/python3.7/os.py'>",
+    "global scrub": "<function scrub>",
+    "joins": "[]",
+    "modulename": "'bloomstack_demo'",
+    "os. path": "<module 'posixpath' from '/home/saroj/frappe-bench/env/lib/python3.7/posixpath.py'>",
+    "os.path. dirname": "<function dirname>",
+    "os.path. join": "<function join>"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "get_pymodule_path",
+   "lines": {
+    "862": "\tif not \"public\" in joins:",
+    "863": "\t\tjoins = [scrub(part) for part in joins]",
+    "864": "\treturn os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)",
+    "865": "",
+    "866": "def get_module_list(app_name):"
+   },
+   "lnum": 864
+  },
+  {
+   "call": "(modulename='bloomstack_demo')",
+   "dump": {
+    "global importlib": "<module 'importlib' from '/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py'>",
+    "importlib. import_module": "<function import_module>",
+    "modulename": "'bloomstack_demo'"
+   },
+   "file": "/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "get_module",
+   "lines": {
+    "824": "def get_module(modulename):",
+    "825": "\t\"\"\"Returns a module object for given Python module name using `importlib.import_module`.\"\"\"",
+    "826": "\treturn importlib.import_module(modulename)",
+    "827": "",
+    "828": "def scrub(txt):"
+   },
+   "lnum": 826
+  },
+  {
+   "call": "(name='bloomstack_demo', package=None)",
+   "dump": {
+    "_bootstrap. _gcd_import": "<function _gcd_import>",
+    "global _bootstrap": "<module 'importlib._bootstrap' (frozen)>",
+    "level": "0",
+    "name": "'bloomstack_demo'",
+    "package": "None"
+   },
+   "file": "/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py",
+   "func": "import_module",
+   "lines": {
+    "125": "                break",
+    "126": "            level += 1",
+    "127": "    return _bootstrap._gcd_import(name[level:], package, level)",
+    "128": "",
+    "129": ""
+   },
+   "lnum": 127
+  },
+  {
+   "call": "(name='bloomstack_demo', package=None, level=0)",
+   "dump": {},
+   "file": "/home/saroj/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_gcd_import",
+   "lines": {},
+   "lnum": 1006
+  },
+  {
+   "call": "(name='bloomstack_demo', import_=<function _gcd_import>)",
+   "dump": {},
+   "file": "/home/saroj/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_find_and_load",
+   "lines": {},
+   "lnum": 983
+  },
+  {
+   "call": "(name='bloomstack_demo', import_=<function _gcd_import>)",
+   "dump": {},
+   "file": "/home/saroj/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_find_and_load_unlocked",
+   "lines": {},
+   "lnum": 965
+  }
+ ],
+ "locals": {
+  "import_": "<function _gcd_import>",
+  "name": "bloomstack_demo",
+  "parent": "",
+  "path": "None",
+  "spec": "None"
+ },
+ "pyver": "Python 3.7.6: /home/saroj/frappe-bench/env/bin/python (prefix: /home/saroj/frappe-bench/env)",
+ "timestamp": "2020-08-19 16:09:38.881587",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 50, in render\n    data = render_page_by_language(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 177, in render_page_by_language\n    return render_page(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 193, in render_page\n    return build(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 200, in build\n    return build_page(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 215, in build_page\n    context = get_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py\", line 15, in get_context\n    context = get_page_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 42, in get_page_context\n    page_context = make_page_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 50, in make_page_context\n    context = resolve_route(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 25, in resolve_route\n    context = get_page_info_from_template(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 66, in get_page_info_from_template\n    app_path = frappe.get_app_path(app)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 849, in get_app_path\n    return get_pymodule_path(app_name, *joins)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 864, in get_pymodule_path\n    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 826, in get_module\n    return importlib.import_module(modulename)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py\", line 127, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1006, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 983, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 965, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'bloomstack_demo'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/app.py\", line 73, in application\n    response = frappe.website.render.render()\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 80, in render\n    data = render_page(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 193, in render_page\n    return build(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 200, in build\n    return build_page(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/render.py\", line 215, in build_page\n    context = get_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/context.py\", line 15, in get_context\n    context = get_page_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 42, in get_page_context\n    page_context = make_page_context(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 50, in make_page_context\n    context = resolve_route(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 25, in resolve_route\n    context = get_page_info_from_template(path)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/website/router.py\", line 66, in get_page_info_from_template\n    app_path = frappe.get_app_path(app)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 849, in get_app_path\n    return get_pymodule_path(app_name, *joins)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 864, in get_pymodule_path\n    return os.path.join(os.path.dirname(get_module(scrub(modulename)).__file__), *joins)\n  File \"/home/saroj/frappe-bench/apps/frappe/frappe/__init__.py\", line 826, in get_module\n    return importlib.import_module(modulename)\n  File \"/home/saroj/frappe-bench/env/lib/python3.7/importlib/__init__.py\", line 127, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1006, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 983, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 965, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'bloomstack_demo'\n"
+}
